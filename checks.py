@@ -56,7 +56,9 @@ def review(sheet, vals, imgs, notes, skipped=()):
         if f["section"] not in active: continue
         v = g(f["cell"]); h = field_hint(f, v)
         if h: add("error", f'{f["label"]} ({f["cell"]}): {h}', f["cell"])
-        elif v is None and f.get("required"): add("warn", f'Missing: {f["label"]} ({f["cell"]})', f["cell"])
+        elif v is None and f.get("required"):
+            if f["type"] == "select" and f.get("default"): add("warn", f'Confirm: {f["label"]} – the template shows "{f["default"]}"; pick the value that is true for our car ({f["cell"]})', f["cell"])
+            else: add("warn", f'Missing: {f["label"]} ({f["cell"]})', f["cell"])
         if v == "N/A" and not (notes or "").strip(): add("warn", f'"{f["label"]}" is N/A – add a short justification in the notes box.', f["cell"])
     for i in sheet["images"]:
         if i["section"] in active and not imgs.get(i["id"]): add("warn", f'No picture uploaded: {i["label"][:90]}')
@@ -100,7 +102,7 @@ def review(sheet, vals, imgs, notes, skipped=()):
         for f in sheet["fields"]:
             if f["type"] == "select" and g(f["cell"]) == "NO": add("warn", f'"{f["label"]}" = NO – attach the datasheet or perform your own test.', f["cell"])
     if name == "Version History" and not g("T:A5"): add("info", "If this is a resubmission, document the changes here.")
-    miss = [o for o in out if o["level"] == "warn" and o["msg"].startswith(("Missing: ", "No picture uploaded: ", "No data pasted: "))]
+    miss = [o for o in out if o["level"] == "warn" and o["msg"].startswith(("Missing: ", "Confirm: ", "No picture uploaded: ", "No data pasted: "))]
     if len(miss) > 6:
         out = [o for o in out if o not in miss]
         out.insert(0, {"level": "warn", "msg": f"{len(miss)} items still missing: " + "; ".join(o["msg"].split(": ", 1)[1][:60] for o in miss[:12]) + (" …" if len(miss) > 12 else ""), **({"cell": miss[0]["cell"]} if miss[0].get("cell") else {})})

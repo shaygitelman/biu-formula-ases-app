@@ -41,6 +41,7 @@ def db():
           create table if not exists imgs(id integer primary key, tpl text, sheet text, slot text, anchor text, file text, name text, user text, ts real);
           create table if not exists notes(tpl text, sheet text, text text, user text, ts real, primary key(tpl,sheet));
           create table if not exists flags(tpl text, sheet text, section text, skip integer, primary key(tpl,sheet,section));
+          create table if not exists owners(tpl text, sheet text, name text, primary key(tpl,sheet));
           create table if not exists log(ts real, tpl text, user text, sheet text, cell text, value text);""")
     return g.db
 @app.teardown_appcontext
@@ -80,8 +81,20 @@ def rules_ctx(tid, name):
     rm = tpl(tid)["rule_map"].get(name) or {}
     return "\n".join(f"{r}: {RULES[r]}" for r in rm.get("rules_2027", []) if r in RULES) + (f"\nNUMBERING NOTE: {rm['mismatch']}" if rm.get("mismatch") else "")
 
+import gzip
+@app.after_request
+def compress(r):
+    if r.direct_passthrough or r.status_code != 200 or "gzip" not in request.headers.get("Accept-Encoding", "") or r.headers.get("Content-Encoding"): return r
+    if not (r.mimetype or "").startswith(("text/", "application/json", "application/javascript")): return r
+    data = r.get_data()
+    if len(data) < 1500: return r
+    if request.path.endswith("/fieldmap") or request.path == "/":
+        r.set_etag(hashlib.md5(data).hexdigest()); r.headers["Cache-Control"] = "no-cache"
+        if request.if_none_match.contains(r.get_etag()[0]): return Response(status=304, headers={"ETag": r.headers["ETag"]})
+    r.set_data(gzip.compress(data, 6)); r.headers["Content-Encoding"] = "gzip"; r.headers["Vary"] = "Accept-Encoding"; r.headers["Content-Length"] = len(r.get_data())
+    return r
 @app.get("/")
-def index(): return send_from_directory(HERE + "/static", "index.html")
+def index(): return Response(open(HERE + "/static/index.html", "rb").read(), mimetype="text/html")
 @app.get("/api/templates")
 def templates(): return jsonify({k: {**v, "loaded": k in T} for k, v in REG.items()})
 @app.get("/api/rules/<rid>")
@@ -93,7 +106,13 @@ def fieldmap(tid):
         "sheets": [{**{k: v for k, v in s.items() if not k.startswith("_")}, "rules": t["rule_map"].get(s["name"], {}),
                     "rule_texts": {r: RULES[r] for r in t["rule_map"].get(s["name"], {}).get("rules_2027", []) if r in RULES}} for s in fm["sheets"]]})
 @app.get("/api/<tid>/progress")
-def all_progress(tid): return jsonify({n: progress(tid, n) for n in tpl(tid)["sheets"]})
+def all_progress(tid):
+    own = {r["sheet"]: r["name"] for r in db().execute("select sheet,name from owners where tpl=?", (tid,))}
+    return jsonify({n: {**progress(tid, n), "owner": own.get(n, "")} for n in tpl(tid)["sheets"]})
+@app.post("/api/<tid>/owner")
+def set_owner(tid):
+    j = request.json; sheet_of(tid, j["sheet"]); name = (j.get("name") or "").strip()[:60]
+    db().execute("insert or replace into owners values(?,?,?)", (tid, j["sheet"], name)); return jsonify({"ok": True})
 @app.get("/api/<tid>/overview")
 def overview(tid):
     out = []
@@ -190,10 +209,14 @@ def build_export(tid, path):
             if not tb: continue
             for i, row in enumerate(json.loads(r["value"])[:tb["max_rows"]]):
                 for k, v in enumerate(row):
-                    if v not in (None, ""): values.setdefault(r["sheet"], {})[col_shift(row_shift(tb["start"], i), k)] = v
+                    if v not in (None, ""):
+                        n = checks.num(v) if re.fullmatch(r"\s*[-+]?\d+(?:[.,]\d+)?(?:[eE][-+]?\d+)?\s*", str(v)) else None
+                        values.setdefault(r["sheet"], {})[col_shift(row_shift(tb["start"], i), k)] = n if n is not None else v
         elif r["cell"] in s["_f"]:
             f = s["_f"][r["cell"]]; v = r["value"]
-            if f["type"] == "number" and checks.num(v) is not None: v = checks.num(v)
+            if f["type"] == "number":
+                if checks.num(v) is None: continue  # invalid number: not written (flagged in Review)
+                v = checks.num(v)
             if r["cell"] == "B9" and r["sheet"] == "Additional Info": continue
             values.setdefault(r["sheet"], {})[r["cell"]] = v
     for r in d.execute("select sheet,slot,file,name from imgs where tpl=? order by ts", (tid,)):
@@ -222,7 +245,8 @@ def backup(tid):
     out = {"format": "biu-ases-backup/1", "template": tid, "created": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
            "values": [dict(r) for r in d.execute("select sheet,cell,value,user,ts from vals where tpl=?", (tid,))],
            "notes": [dict(r) for r in d.execute("select sheet,text,user,ts from notes where tpl=?", (tid,))],
-           "flags": [dict(r) for r in d.execute("select sheet,section,skip from flags where tpl=?", (tid,))], "images": []}
+           "flags": [dict(r) for r in d.execute("select sheet,section,skip from flags where tpl=?", (tid,))],
+           "owners": [dict(r) for r in d.execute("select sheet,name from owners where tpl=?", (tid,))], "images": []}
     for r in d.execute("select sheet,slot,file,name,user,ts from imgs where tpl=? order by ts", (tid,)):
         p = os.path.join(UP, r["file"])
         if os.path.exists(p): out["images"].append({**{k: r[k] for k in ("sheet", "slot", "name", "user", "ts")}, "data": base64.b64encode(open(p, "rb").read()).decode()})
@@ -235,7 +259,7 @@ def restore(tid):
     if j.get("format") != "biu-ases-backup/1" or j.get("template") != tid: return jsonify({"error": "this backup is not for this template"}), 400
     d = db(); bk = os.path.join(DD, f"auto_before_restore_{int(time.time())}.json")
     open(bk, "w").write(backup(tid).get_data(as_text=True))  # safety copy of the current state
-    for tb in ("vals", "imgs", "notes", "flags"): d.execute(f"delete from {tb} where tpl=?", (tid,))
+    for tb in ("vals", "imgs", "notes", "flags", "owners"): d.execute(f"delete from {tb} where tpl=?", (tid,))
     n = {"values": 0, "images": 0, "skipped": 0}
     for v in j.get("values", []):
         if v["sheet"] in S and (v["cell"] in S[v["sheet"]]["_f"] or v["cell"][2:] in S[v["sheet"]]["_t"]):
@@ -245,6 +269,8 @@ def restore(tid):
         if v["sheet"] in S: d.execute("insert or replace into notes values(?,?,?,?,?)", (tid, v["sheet"], v["text"], v.get("user"), v.get("ts")))
     for v in j.get("flags", []):
         if v["sheet"] in S: d.execute("insert or replace into flags values(?,?,?,?)", (tid, v["sheet"], v["section"], v["skip"]))
+    for v in j.get("owners", []):
+        if v["sheet"] in S: d.execute("insert or replace into owners values(?,?,?)", (tid, v["sheet"], v["name"]))
     for v in j.get("images", []):
         s = S.get(v["sheet"])
         if not s or v["slot"] not in s["_i"]: n["skipped"] += 1; continue
