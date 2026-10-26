@@ -1,65 +1,154 @@
-<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BIU Formula – מילוי ASES</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BIU Formula · ASES</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,"Segoe UI",Arial;background:#f4f6f9;color:#1d2433}
-header{background:#0b3d91;color:#fff;padding:12px 20px;display:flex;align-items:center;gap:16px}
-header h1{font-size:18px;margin:0;flex:1}header input{padding:6px;border-radius:6px;border:0}
-.btn{background:#0b3d91;color:#fff;border:0;border-radius:8px;padding:8px 14px;cursor:pointer;font-size:14px}.btn.alt{background:#fff;color:#0b3d91;border:1px solid #0b3d91}
-header .btn{background:#ffb703;color:#000}
-main{display:grid;grid-template-columns:260px 1fr 360px;gap:14px;padding:14px;height:calc(100vh - 58px)}
-nav,section,aside{background:#fff;border-radius:12px;box-shadow:0 1px 4px #0001;overflow:auto}
-nav a{display:block;padding:10px 14px;border-bottom:1px solid #eee;cursor:pointer;font-size:14px}
-nav a.act{background:#e8f0ff;font-weight:600}.bar{height:5px;background:#eee;border-radius:3px;margin-top:5px}.bar i{display:block;height:100%;background:#2a9d8f;border-radius:3px}
-section{padding:18px}h2{margin:0 0 4px}.sub{color:#667;font-size:13px;margin-bottom:12px}
-.blk{border:1px solid #e3e7ee;border-radius:10px;padding:10px 12px;margin:10px 0}.blk h4{margin:0 0 8px;color:#0b3d91}
-.f{display:grid;grid-template-columns:1fr 220px;gap:8px;align-items:center;padding:5px 0;border-bottom:1px dashed #eee}
-.f label{font-size:13.5px;direction:ltr;text-align:left}.f label small{color:#889;display:block}
-.f input,.f select,.f textarea{width:100%;padding:6px;border:1px solid #cdd3dd;border-radius:6px;font-size:14px;direction:ltr}
-.f.filled input,.f.filled select,.f.filled textarea{border-color:#2a9d8f;background:#f3fbf9}
-.unit{font-size:12px;color:#666}.img{border:1px dashed #9ab;border-radius:10px;padding:10px;margin:8px 0}
-.img .lbl{direction:ltr;text-align:left;font-size:13px}.thumbs img{height:70px;margin:4px;border-radius:4px;border:1px solid #ccc}
-.thumbs span{display:inline-block;position:relative}.thumbs b{position:absolute;top:0;left:0;background:#c00;color:#fff;border-radius:50%;width:18px;height:18px;text-align:center;font-size:12px;cursor:pointer}
-aside{display:flex;flex-direction:column}aside .hd{padding:12px;border-bottom:1px solid #eee}#msgs{flex:1;overflow:auto;padding:10px;font-size:13.5px}
-.m{padding:8px 10px;border-radius:10px;margin:6px 0;white-space:pre-wrap}.m.u{background:#e8f0ff}.m.a{background:#f6f6f6}
-.find{padding:6px 8px;border-radius:6px;margin:4px 0;font-size:13px}.error{background:#fde2e1}.warn{background:#fff3cd}.ok{background:#d9f2e6}.tip,.info,.rule{background:#eef2f7}
-#chatf{display:flex;gap:6px;padding:10px;border-top:1px solid #eee}#chatf input{flex:1;padding:8px;border-radius:6px;border:1px solid #ccd}
-textarea.notes{width:100%;min-height:60px;border-radius:8px;border:1px solid #ccd;padding:6px}
+:root{--bg:#0d0f13;--panel:#151922;--panel2:#1c212c;--line:#2a3140;--txt:#e7eaf0;--mut:#8b93a7;--acc:#ff3b30;--acc2:#ff8a00;--ok:#22c55e;--warn:#f59e0b;--err:#ef4444;--info:#3b82f6;--r:12px}
+*{box-sizing:border-box}html,body{margin:0;height:100%}body{background:var(--bg);color:var(--txt);font:14px/1.45 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:#ff8a65}button,input,select,textarea{font:inherit;color:inherit}
+header{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:10px 16px;background:linear-gradient(90deg,#11141b,#171b24);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}.brand .flag{width:34px;height:22px;border-radius:4px;background:repeating-conic-gradient(#fff 0 25%,#111 0 50%) 0 0/11px 11px;box-shadow:0 0 0 2px var(--acc)}
+.brand small{display:block;font-weight:500;color:var(--mut);font-size:11px;letter-spacing:0}
+.grow{flex:1}.save{font-size:12px;color:var(--mut);display:flex;align-items:center;gap:6px}.dot{width:8px;height:8px;border-radius:50%;background:var(--ok)}.save.busy .dot{background:var(--warn);animation:p 1s infinite}.save.bad .dot{background:var(--err)}@keyframes p{50%{opacity:.3}}
+.btn{border:1px solid var(--line);background:var(--panel2);padding:7px 12px;border-radius:9px;cursor:pointer;white-space:nowrap}.btn:hover{border-color:#3a4357}.btn.pri{background:linear-gradient(90deg,var(--acc),var(--acc2));border:0;font-weight:700;color:#fff}.btn.sm{padding:4px 9px;font-size:12px}
+.menu{position:relative}.menu .dd{display:none;position:absolute;right:0;top:110%;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:6px;min-width:240px;box-shadow:0 10px 30px #0008}.menu.open .dd{display:block}.dd button{display:block;width:100%;text-align:left;background:none;border:0;padding:8px 10px;border-radius:7px;cursor:pointer}.dd button:hover{background:#262c3a}.dd small{color:var(--mut);display:block}
+#who{width:120px;background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:6px 9px}
+.layout{display:grid;grid-template-columns:270px 1fr 340px;height:calc(100vh - 55px)}
+nav{border-right:1px solid var(--line);overflow:auto;padding:10px;background:#10131a}
+nav .it{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:9px;cursor:pointer;color:#cfd4df}nav .it:hover{background:#181d27}nav .it.on{background:#1f2530;box-shadow:inset 3px 0 0 var(--acc)}
+nav .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ring{--p:0;width:26px;height:26px;border-radius:50%;background:conic-gradient(var(--c,var(--acc)) calc(var(--p)*1%),#2a3140 0);display:grid;place-items:center;flex:none}.ring:after{content:attr(data-t);width:20px;height:20px;border-radius:50%;background:#10131a;display:grid;place-items:center;font-size:8px;color:var(--mut)}
+.badge{font-size:10px;padding:1px 6px;border-radius:9px;background:#2a3140;color:var(--mut)}.badge.e{background:#4a1d1d;color:#fca5a5}.badge.na{background:#24324a;color:#93c5fd}
+nav h4{margin:14px 8px 6px;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:1px}
+main{overflow:auto;padding:22px 26px 80px}aside{border-left:1px solid var(--line);overflow:auto;background:#10131a;display:flex;flex-direction:column}
+h1{margin:0 0 4px;font-size:22px}h2{font-size:16px;margin:0}.mut{color:var(--mut)}.sub{color:var(--mut);margin:0 0 14px;white-space:pre-wrap}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin:0 0 14px}.card.skip{opacity:.5}
+.card .hd{display:flex;align-items:center;gap:10px;margin-bottom:8px}.help{color:var(--mut);font-size:12.5px;white-space:pre-wrap;margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chip{font-size:12px;border:1px solid #4b2a2a;background:#241618;color:#ffb4a8;padding:3px 9px;border-radius:20px;cursor:pointer}
+.f{display:grid;grid-template-columns:minmax(180px,38%) 1fr;gap:4px 14px;padding:8px 0;border-top:1px solid #1f2430;align-items:start}.f:first-of-type{border-top:0}
+.f label{font-weight:500;padding-top:6px}.f label .req{color:var(--acc)}.f .u{color:var(--mut);font-size:12px;margin-left:4px}
+.f .in{display:flex;flex-direction:column;gap:3px}.f input,.f select,.f textarea{width:100%;background:#0f1218;border:1px solid var(--line);border-radius:8px;padding:7px 10px;outline:0}.f textarea{min-height:90px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--acc2);box-shadow:0 0 0 3px #ff8a0022}.f .bad{border-color:var(--err)!important}.hint{font-size:12px;color:#fca5a5}.fh{font-size:12px;color:var(--mut);white-space:pre-wrap}.cell{font-size:10px;color:#596178;font-family:ui-monospace,monospace}
+.f input.filled,.f select.filled,.f textarea.filled{border-color:#2f5e3f}
+.drop{border:1.5px dashed #3a4357;border-radius:10px;padding:12px;margin:8px 0;background:#11151c;transition:.15s}.drop.over{border-color:var(--acc2);background:#1d1710}
+.drop .t{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.th{position:relative;width:110px;height:82px;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:#000}.th img{width:100%;height:100%;object-fit:cover;cursor:zoom-in}.th button{position:absolute;top:3px;right:3px;border:0;background:#000b;color:#fff;border-radius:6px;cursor:pointer;padding:0 6px}
+.tbl{border:1px solid var(--line);border-radius:10px;padding:12px;margin:8px 0;background:#11151c}.tbl textarea{width:100%;min-height:110px;background:#0f1218;border:1px solid var(--line);border-radius:8px;padding:8px;font-family:ui-monospace,monospace;font-size:12px}
+.tbl table{border-collapse:collapse;font-size:12px;margin-top:6px}.tbl td,.tbl th{border:1px solid var(--line);padding:2px 8px}.tbl th{color:var(--mut);font-weight:500}
+.tog{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--mut);cursor:pointer;user-select:none}.tog input{accent-color:var(--acc)}
+details.g{background:#121620;border:1px solid var(--line);border-radius:var(--r);padding:10px 14px;margin-bottom:14px}details.g summary{cursor:pointer;font-weight:600}details.g pre{white-space:pre-wrap;font:12.5px/1.5 inherit;color:#c3c9d6;max-height:380px;overflow:auto}
+.ap{padding:14px;border-bottom:1px solid var(--line)}.ap h3{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--mut)}
+.fd{font-size:12.5px;padding:7px 9px;border-radius:8px;margin:5px 0;background:#171b24;border-left:3px solid var(--mut);cursor:default}.fd.error{border-color:var(--err)}.fd.warn{border-color:var(--warn)}.fd.ok{border-color:var(--ok)}.fd.tip{border-color:#a78bfa}.fd.info{border-color:var(--info)}.fd.rule{border-color:#ff8a65;color:#c3c9d6}.fd[data-cell]{cursor:pointer}
+.chat{flex:1;display:flex;flex-direction:column;padding:14px;min-height:260px}.msgs{flex:1;overflow:auto;display:flex;flex-direction:column;gap:8px}.m{padding:8px 10px;border-radius:10px;white-space:pre-wrap;font-size:13px}.m.u{background:#2a1b1b;align-self:flex-end;max-width:90%}.m.a{background:#171b24}
+.chat form{display:flex;gap:6px;margin-top:8px}.chat input{flex:1;background:#0f1218;border:1px solid var(--line);border-radius:9px;padding:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}.sc{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px;cursor:pointer}.sc:hover{border-color:#3a4357}.bar{height:6px;background:#262c3a;border-radius:4px;overflow:hidden;margin:8px 0 4px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2))}
+.big{display:flex;gap:22px;align-items:center}.bigring{--p:0;width:110px;height:110px;border-radius:50%;background:conic-gradient(var(--acc) calc(var(--p)*1%),#262c3a 0);display:grid;place-items:center}.bigring b{width:88px;height:88px;border-radius:50%;background:var(--panel);display:grid;place-items:center;font-size:24px}
+.cl li{margin:5px 0;list-style:none}.cl li:before{content:"○ ";color:var(--mut)}.cl li.y:before{content:"✓ ";color:var(--ok)}.cl li.n:before{content:"✗ ";color:var(--err)}.cl{padding:0}
+.modal{position:fixed;inset:0;background:#000a;z-index:50;display:none;align-items:center;justify-content:center;padding:20px}.modal.on{display:flex}.modal .box{background:var(--panel);border:1px solid var(--line);border-radius:14px;max-width:900px;max-height:88vh;overflow:auto;padding:20px;white-space:pre-wrap}.modal img{max-width:100%;max-height:80vh}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#222838;border:1px solid var(--line);padding:10px 16px;border-radius:10px;z-index:60;display:none}.toast.on{display:block}
+.burger{display:none}.aitog{display:none}
+@media (max-width:1150px){.layout{grid-template-columns:240px 1fr}aside{position:fixed;right:0;top:55px;bottom:0;width:min(360px,92vw);z-index:30;transform:translateX(100%);transition:.2s}aside.on{transform:none}.aitog{display:inline-block}}
+@media (max-width:760px){.layout{grid-template-columns:1fr}nav{position:fixed;left:0;top:55px;bottom:0;width:80vw;z-index:30;transform:translateX(-100%);transition:.2s}nav.on{transform:none}.burger{display:inline-block}.f{grid-template-columns:1fr}main{padding:16px 12px 80px}#who,.hide-m,.brand small,#savet{display:none}.brand{font-size:13px}.btn{padding:6px 9px}header{gap:8px;padding:8px 10px}}
 </style></head><body>
-<header><h1>🏎️ BIU Formula Student – מילוי ASES ל-FSG</h1>מסמך: <select id="tsel" onchange="location.search='?t='+this.value"></select> שם ממלא: <input id="user" placeholder="שם / תת-צוות"><a class="btn" id="exp" href="#">⬇ ייצוא XLSM</a></header>
-<main><nav id="nav"></nav><section id="sec"></section>
-<aside><div class="hd"><b>🤖 עוזר AI ללשונית</b><br><button class="btn" style="margin-top:8px" onclick="runCheck()">✔ בדוק את הסעיף</button> <span id="llm" class="unit"></span></div>
-<div id="msgs"></div><form id="chatf" onsubmit="ask(event)"><input id="q" placeholder="שאלו על הסעיף… (למשל: מה חסר כדי לא לקבל ריג'קט?)"><button class="btn">שלח</button></form></aside></main>
+<header><button class="btn burger" onclick="nav.classList.toggle('on')">☰</button>
+<div class="brand"><div class="flag"></div><div>BIU FORMULA · <span id="tname">ASES</span><small id="tsub">Accumulator Structural Equivalency Spreadsheet</small></div></div>
+<div class="grow"></div><div class="save" id="save"><span class="dot"></span><span id="savet">All changes saved</span></div>
+<input id="who" placeholder="Your name" title="Shown in the change log">
+<button class="btn aitog" onclick="aside.classList.toggle('on')">Assistant</button>
+<div class="menu" id="menu"><button class="btn" onclick="menu.classList.toggle('open')">Data ▾</button><div class="dd">
+<button onclick="location=A('/backup')">⬇ Download backup (JSON)<small>Everything: values, notes, pictures</small></button>
+<button onclick="pick('.json',restore)">⬆ Restore from backup<small>Replaces the current data (a safety copy is kept on the server)</small></button>
+<button onclick="pick('.xlsm,.xlsx',importX)">📥 Import a filled ASES file<small>Typed values only – pictures must be uploaded again</small></button></div></div>
+<button class="btn pri" onclick="doExport()">Export .xlsm</button></header>
+<div class="layout"><nav id="nav"></nav><main id="main"></main>
+<aside id="aside"><div class="ap"><h3>Automatic check <button class="btn sm" style="float:right" onclick="runCheck()">Re-run</button></h3><div id="find" class="mut">Open a tab to see its review.</div></div>
+<div class="chat"><h3 class="mut" style="margin:0 0 8px;font-size:13px;letter-spacing:1px">ASSISTANT</h3><div class="msgs" id="msgs"></div>
+<form onsubmit="ask(event)"><input id="q" placeholder="Ask about this tab, e.g. EV5.5.14"><button class="btn pri">Ask</button></form></div></aside></div>
+<div class="modal" id="modal" onclick="if(event.target===this)this.classList.remove('on')"><div class="box" id="mbox"></div></div><div class="toast" id="toast"></div>
 <script>
-let FM, cur, ST, hist=[]; const TID=new URLSearchParams(location.search).get('t')||'ases'; const A=p=>'/api/'+TID+p;
-const $=s=>document.querySelector(s), user=()=>$('#user').value||'anon';
-$('#user').value=localStorage.u||''; $('#user').onchange=()=>localStorage.u=$('#user').value;
-async function J(u,o){const r=await fetch(u,o);return r.json()}
-async function init(){$('#exp').href=A('/export');const TT=await J('/api/templates');$('#tsel').innerHTML=Object.entries(TT).map(([k,v])=>`<option value="${k}" ${k==TID?'selected':''} ${v.loaded?'':'disabled'}>${k.toUpperCase()}${v.loaded?'':' (בקרוב)'}</option>`).join('');FM=await J(A('/fieldmap'));await nav();open(FM.sheets[0].name)}
-async function nav(){const p=await J(A('/progress'));$('#nav').innerHTML=FM.sheets.map((s,i)=>`<a class="${cur==s.name?'act':''}" onclick="open('${s.name.replace(/'/g,"\\'")}')">${i+1}. ${s.title_he}<br><small style="direction:ltr;color:#889">${s.name}</small> <small>${p[s.name].done}/${p[s.name].total}</small><div class="bar"><i style="width:${p[s.name].pct}%"></i></div></a>`).join('')}
-function esc(s){return (s??'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
-function fieldHtml(f){const v=ST.values[f.cell]??'';const id='f_'+f.cell;let inp;
- if(f.type=='select')inp=`<select id="${id}"><option value="">— (${esc(f.default||'ריק')}) —</option>${f.options.map(o=>`<option ${o==v?'selected':''}>${esc(o)}</option>`).join('')}</select>`;
- else if(f.type=='textarea')inp=`<textarea id="${id}" rows="2">${esc(v)}</textarea>`;
- else inp=`<input id="${id}" ${f.type=='number'?'inputmode="decimal"':''} value="${esc(v)}" placeholder="${esc(f.default||'')}">`;
- return `<div class="f ${v!==''?'filled':''}"><label>${esc(f.label)}${f.col_header?` – <b>${esc(f.col_header)}</b>`:''}<small>${f.cell}${f.unit?' · יחידות: '+esc(f.unit):''}</small></label><div>${inp}${f.unit?`<span class="unit"> ${esc(f.unit)}</span>`:''}</div></div>`}
-async function open(name){cur=name;hist=[];const s=FM.sheets.find(x=>x.name==name);ST=await J(A('/sheet/')+encodeURIComponent(name));
- const groups={};s.fields.forEach(f=>(groups[f.block||0]=groups[f.block||0]||[]).push(f));
- const rm=s.rules||{};let h=`<h2>${s.title_he}</h2><div class="sub" dir="ltr" style="text-align:right">${s.name} · ${s.fields.length} שדות · ${s.images.length} אזורי תמונה</div>`;
- if(rm.mismatch) h+=`<div class="find warn">⚠ מספור כללים: התבנית היא 2026, התקנון 2027. ${esc(rm.mismatch)}</div>`; if(rm.rules_2027&&rm.rules_2027.length) h+=`<div class="sub">כללים רלוונטיים 2027: ${rm.rules_2027.map(r=>`<a href="#" onclick="showRule('${r}');return false">${r}</a>`).join(' · ')}</div>`;
- for(const [b,fs] of Object.entries(groups)) h+=`<div class="blk">${b>0?`<h4>פריט / קבוצה #${b}</h4>`:''}${fs.map(fieldHtml).join('')}</div>`;
- if(s.images.length) h+=`<h3>📷 תמונות / CAD</h3>`+s.images.map(i=>`<div class="img"><div class="lbl">${esc(i.label)} <small>(${i.anchor})</small></div><input type="file" accept="image/*" multiple onchange="upl(this,'${i.id}')"><div class="thumbs">${ST.images.filter(x=>x.slot==i.id).map(x=>`<span><img src="${A('/image/'+x.id)}" title="${esc(x.name)} – ${esc(x.user)}"><b onclick="delImg(${x.id})">×</b></span>`).join('')}</div></div>`).join('');
- h+=`<h3>📝 הצדקות N/A / הערות לסעיף</h3><textarea class="notes" id="notes" placeholder="למשל: N/A בשורה X כי … (ייכתב ללשונית Additional Info)">${esc(ST.notes)}</textarea>`;
- $('#sec').innerHTML=h;
- s.fields.forEach(f=>{const el=$('#f_'+CSS.escape(f.cell));el.onchange=async()=>{const r=await J(A('/value'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sheet:name,cell:f.cell,value:el.value,user:user()})});el.closest('.f').classList.toggle('filled',el.value!=='');nav()}});
- $('#notes').onchange=()=>J(A('/notes'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sheet:name,text:$('#notes').value,user:user()})});
- $('#msgs').innerHTML='';nav()}
-async function upl(inp,slot){for(const f of inp.files){const fd=new FormData();fd.append('file',f);fd.append('sheet',cur);fd.append('slot',slot);fd.append('user',user());await fetch(A('/image'),{method:'POST',body:fd})}open(cur)}
-async function delImg(id){if(confirm('למחוק תמונה?')){await fetch(A('/image/')+id,{method:'DELETE'});open(cur)}}
-async function runCheck(){const r=await J(A('/check/')+encodeURIComponent(cur));$('#msgs').insertAdjacentHTML('beforeend',`<div class="m a"><b>תוצאות בדיקה – ${esc(cur)}</b>${r.map(x=>`<div class="find ${x.level}">${{error:'⛔',warn:'⚠️',ok:'✅',tip:'💡',info:'ℹ️',rule:'📘'}[x.level]} ${esc(x.msg)}</div>`).join('')}</div>`);$('#msgs').scrollTop=1e9}
-async function ask(e){e.preventDefault();const q=$('#q').value;if(!q)return;$('#q').value='';$('#msgs').insertAdjacentHTML('beforeend',`<div class="m u">${esc(q)}</div>`);
- const r=await J(A('/chat'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sheet:cur,message:q,history:hist})});
- hist.push({role:'user',content:q},{role:'assistant',content:r.answer});$('#llm').textContent=r.llm?'LLM מחובר':'מצב חוקים (ללא LLM)';
- $('#msgs').insertAdjacentHTML('beforeend',`<div class="m a">${esc(r.answer)}</div>`);$('#msgs').scrollTop=1e9}
-async function showRule(r){const x=await J('/api/rules/'+r);$('#msgs').insertAdjacentHTML('beforeend',`<div class="m a" dir="ltr"><b>${r} (FS Rules 2027)</b>\n${esc(x.text)}</div>`);$('#msgs').scrollTop=1e9}
-init();
+{const rc=Element.prototype.replaceChildren;Element.prototype.replaceChildren=function(...k){return rc.apply(this,k.flat().filter(x=>x!=null&&x!==false))}}
+const TID=new URLSearchParams(location.search).get('t')||'ases', A=p=>`/api/${TID}${p}`, $=s=>document.querySelector(s);
+const E=(t,a={},...k)=>{const e=document.createElement(t);for(const[x,y]of Object.entries(a)){if(x.startsWith('on'))e[x]=y;else if(x==='html')e.innerHTML=y;else if(y!==false&&y!=null)e.setAttribute(x,y===true?'':y)}k.flat().forEach(c=>c!=null&&e.append(c.nodeType?c:document.createTextNode(c)));return e};
+let FM,PROG={},CUR=null,ST=null,pending=0,hist=[];const who=$('#who');who.value=localStorage.who||'';who.onchange=()=>localStorage.who=who.value;
+const nav=$('#nav'),aside=$('#aside'),menu=$('#menu');document.addEventListener('click',e=>{if(!menu.contains(e.target))menu.classList.remove('open')});
+const toast=(m,ms=3500)=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('on'),ms)};
+const modal=(n)=>{$('#mbox').replaceChildren(n);$('#modal').classList.add('on')};
+function saving(d){pending+=d;const s=$('#save');s.className='save'+(pending>0?' busy':'');$('#savet').textContent=pending>0?'Saving…':'All changes saved · '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})}
+async function api(p,o={}){const r=await fetch(A(p),o);let j={};try{j=await r.json()}catch(e){}if(!r.ok){throw new Error(j.error||r.statusText)}return j}
+const post=(p,b)=>api(p,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});
+const short=n=>n.replace(/^EV5\.5\.\S+ /,'').replace('Alt. Matl - ','');
+async function init(){FM=await api('/fieldmap');$('#tname').textContent=FM.title?.split(' ')[0]||TID.toUpperCase();await refreshNav();route()}
+async function refreshNav(){PROG=await api('/progress');nav.replaceChildren(E('h4',{},'Workspace'),item('__overview','Overview',null),E('h4',{},'Template tabs'),...FM.sheets.map(s=>item(s.name,short(s.name),PROG[s.name])))}
+function item(id,label,p){const on=CUR===id||(!CUR&&id==='__overview');let r=null,b=null;
+ if(p){r=E('div',{class:'ring',style:`--p:${p.pct};--c:${p.na?'#3b82f6':p.pct==100?'#22c55e':'#ff3b30'}`,'data-t':p.na?'N/A':p.optional?'opt':p.pct+'%'});if(p.errors)b=E('span',{class:'badge e'},p.errors+' err')}
+ else r=E('div',{class:'ring',style:'--p:100;--c:#ff8a00','data-t':'★'});
+ return E('div',{class:'it'+(on?' on':''),title:id,onclick:()=>{location.hash=encodeURIComponent(id);nav.classList.remove('on')}},r,E('span',{class:'nm'},label),b)}
+window.onhashchange=route;
+function route(){const h=decodeURIComponent(location.hash.slice(1));CUR=FM.sheets.find(s=>s.name===h)?h:'__overview';refreshNav();CUR==='__overview'?overview():openSheet(CUR)}
+async function overview(){const ov=await api('/overview');const tot=ov.reduce((a,o)=>a+(o.na?0:o.total),0),done=ov.reduce((a,o)=>a+(o.na?0:o.done),0),pct=tot?Math.round(100*done/tot):0;
+ const errs=ov.reduce((a,o)=>a+o.error,0),cover=ov.find(o=>o.sheet==='Cover Sheet');
+ const ck=[[ov.every(o=>o.pct==100||o.na),'Every tab complete or marked not applicable'],[errs===0,'No errors from the automatic checks'+(errs?` (${errs} open)`:'')],[cover&&cover.pct==100,'Cover sheet: team data and compliance matrix filled'],
+  [ov.filter(o=>!o.na&&o.total).every(o=>o.warn===0),'No open warnings (missing pictures, "No" answers, N/A without justification)'],[null,'Engineering review done by a second team member (manual)'],[null,'Downloaded a backup (JSON) after the last change (manual)']];
+ const m=$('#main');m.replaceChildren(E('h1',{},'ASES overview'),E('p',{class:'sub'},'Fill the tabs on the left. Everything autosaves; the export writes into the official FSG template (macros kept). FS Rules 2027 apply – the template still uses 2026 rule numbers.'),
+ E('div',{class:'card big'},E('div',{class:'bigring',style:`--p:${pct}`},E('b',{},pct+'%')),E('div',{},E('h2',{},`${done} of ${tot} items done`),E('p',{class:'mut'},`${ov.filter(o=>o.pct==100&&!o.na).length} tabs complete · ${ov.filter(o=>o.na).length} not applicable · ${errs} errors`),E('button',{class:'btn pri',onclick:doExport},'Export .xlsm'),' ',E('button',{class:'btn',onclick:()=>location=A('/backup')},'Download backup'))),
+ E('div',{class:'card'},E('h2',{},'Ready to export?'),E('ul',{class:'cl'},ck.map(([ok,t])=>E('li',{class:ok===null?'':ok?'y':'n'},t)))),
+ E('div',{class:'grid'},ov.map(o=>E('div',{class:'sc',onclick:()=>location.hash=encodeURIComponent(o.sheet)},E('b',{},short(o.sheet)),E('div',{class:'bar'},E('i',{style:`width:${o.pct}%;${o.na?'background:#3b82f6':''}`})),
+  E('div',{class:'mut',style:'font-size:12px'},o.na?'Not applicable':`${o.done}/${o.total} · ${o.error} errors · ${o.warn} warnings`)))),
+ FM.needs_review?.length?E('details',{class:'g',style:'margin-top:14px'},E('summary',{},`Template cells intentionally left out (${FM.needs_review.length}) – needs review`),E('ul',{},FM.needs_review.map(x=>E('li',{class:'mut'},x)))):null);
+ $('#find').textContent='Open a tab to see its review.'}
+async function openSheet(name){const s=FM.sheets.find(x=>x.name===name);ST=await api('/sheet/'+encodeURIComponent(name));const skip=new Set(ST.skip),na=skip.has('*');
+ const m=$('#main'),rules=s.rules?.rules_2027||[];
+ const head=[E('h1',{},s.title||name),E('div',{class:'mut',style:'font-size:12px;margin-bottom:6px'},'Excel tab: ',E('b',{},name)),s.intro?E('p',{class:'sub'},s.intro):null,
+  rules.length?E('div',{class:'chips'},rules.map(r=>E('span',{class:'chip',title:'FS Rules 2027',onclick:()=>modal(E('div',{},E('h2',{},r+' (FS Rules 2027)'),E('p',{},s.rule_texts[r]||'')))},r))):null,
+  s.rules?.mismatch?E('p',{class:'help',style:'color:#fcd34d'},'⚠ '+s.rules.mismatch):null,
+  ...(s.guidance||[]).map(gk=>E('details',{class:'g'},E('summary',{},'📘 Official guidance: '+gk),E('pre',{},FM.guidance[gk]||''))),
+  E('label',{class:'tog',style:'margin:4px 0 14px'},E('input',{type:'checkbox',checked:na,onchange:e=>setSkip('*',e.target.checked)}),'This whole tab is not applicable to our car (it is exported unchanged)')];
+ const secs=na?[]:s.sections.map(sec=>{const sk=skip.has(sec.id);return E('div',{class:'card'+(sk?' skip':''),id:'sec-'+sec.id},
+  E('div',{class:'hd'},E('h2',{style:'flex:1'},sec.title),E('label',{class:'tog'},E('input',{type:'checkbox',checked:sk,onchange:e=>setSkip(sec.id,e.target.checked)}),'Not used')),
+  sec.help?E('p',{class:'help'},sec.help):null,...(sk?[]:sec.items.map(it=>it.kind==='field'?field(s,s.fields.find(f=>f.cell===it.cell)):it.kind==='image'?imageSlot(s,s.images.find(i=>i.id===it.id)):table(s,s.tables.find(t=>t.id===it.id)))))});
+ const notes=E('textarea',{placeholder:'Justify every N/A answer of this tab here. Written to the "Additional Info" tab on export.',style:'width:100%;min-height:70px;background:#0f1218;border:1px solid #2a3140;border-radius:8px;padding:8px'});notes.value=ST.notes||'';
+ notes.oninput=debounce(()=>{saving(1);post('/notes',{sheet:name,text:notes.value,user:who.value}).then(()=>saving(-1),e=>{saving(-1);bad(e)})},700);
+ m.replaceChildren(...head,...secs,na?null:E('div',{class:'card'},E('h2',{},'Notes / N/A justifications'),E('p',{class:'help'},'Free text, one point per line.'),notes));m.scrollTop=0;runCheck()}
+const debounce=(f,ms)=>{let h;return(...a)=>{clearTimeout(h);h=setTimeout(()=>f(...a),ms)}};
+function bad(e){const s=$('#save');s.className='save bad';$('#savet').textContent='Save failed: '+e.message;toast('Save failed: '+e.message)}
+function field(s,f){if(!f)return null;const v=ST.values[f.cell]??'';let inp;
+ if(f.type==='select'){inp=E('select',{},E('option',{value:''},f.default?`— template default: ${f.default} —`:'— select —'),f.options.map(o=>E('option',{value:o},o)));inp.value=v}
+ else if(f.type==='textarea'){inp=E('textarea',{});inp.value=v}
+ else inp=E('input',{type:f.type==='email'?'email':'text',inputmode:f.type==='number'?'decimal':null,value:v,placeholder:f.default!=null?'template: '+f.default:(f.type==='number'?'number':'')});
+ const hint=E('div',{class:'hint'});inp.id='c-'+f.cell;
+ const mark=()=>{inp.classList.toggle('filled',inp.value!=='')};mark();
+ const save=async()=>{saving(1);try{const r=await post('/value',{sheet:s.name,cell:f.cell,value:inp.value,user:who.value});hint.textContent=r.hint||'';inp.classList.toggle('bad',!!r.hint);PROG[s.name]=r.progress;refreshNavSoft();checkSoon()}catch(e){bad(e)}saving(-1)};
+ const ds=debounce(save,600);inp.oninput=()=>{mark();localCheck();ds()};if(f.type==='select')inp.onchange=()=>{mark();save()},inp.oninput=null;
+ const localCheck=()=>{let h='';const x=inp.value.trim();if(x&&f.type==='number'&&isNaN(+x.replace(',','.')))h='Must be a number'+(f.unit?' in '+f.unit:'')+'.';if(x&&f.type==='email'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x))h='Not a valid email address.';hint.textContent=h;inp.classList.toggle('bad',!!h)};
+ if(v)setTimeout(localCheck);
+ return E('div',{class:'f'},E('label',{for:inp.id},f.label,f.required?E('span',{class:'req'},' *'):null,f.unit?E('span',{class:'u'},'['+f.unit+']'):null,E('div',{class:'cell'},f.range||f.cell)),E('div',{class:'in'},inp,f.help?E('div',{class:'fh'},f.help):null,hint))}
+function imageSlot(s,im){if(!im)return null;const th=E('div',{class:'thumbs'}),inp=E('input',{type:'file',accept:'image/*',multiple:true,style:'display:none'});
+ const draw=()=>th.replaceChildren(...ST.images.filter(x=>x.slot===im.id).map(x=>E('div',{class:'th',title:x.name},E('img',{src:A(`/image/${x.id}?thumb=1`),loading:'lazy',onclick:()=>modal(E('img',{src:A('/image/'+x.id)}))}),E('button',{title:'Remove',onclick:async()=>{if(!confirm('Remove this picture?'))return;await api('/image/'+x.id,{method:'DELETE'});ST.images=ST.images.filter(y=>y.id!==x.id);draw();afterChange(s)}},'×'))));
+ const up=async files=>{files=[...files].filter(f=>/^image\//.test(f.type)||/\.(png|jpe?g|gif|bmp|webp)$/i.test(f.name));if(!files.length)return toast('Only image files (png, jpg, gif, bmp, webp)');
+  const fd=new FormData();fd.append('sheet',s.name);fd.append('slot',im.id);fd.append('user',who.value);files.forEach(f=>fd.append('file',f));saving(1);
+  try{await api('/image',{method:'POST',body:fd});ST=await api('/sheet/'+encodeURIComponent(s.name));draw();afterChange(s);toast(files.length+' picture(s) uploaded')}catch(e){bad(e)}saving(-1)};
+ inp.onchange=()=>up(inp.files);const d=E('div',{class:'drop'},E('div',{class:'t'},E('b',{},'🖼 '+im.label),E('span',{class:'grow'}),E('button',{class:'btn sm',onclick:()=>inp.click()},'Choose files'),inp),
+  im.help?E('div',{class:'fh'},im.help):null,E('div',{class:'mut',style:'font-size:12px;margin-top:4px'},`Drop or paste pictures here · placed in ${im.area||im.anchor}`),th);
+ d.ondragover=e=>{e.preventDefault();d.classList.add('over')};d.ondragleave=()=>d.classList.remove('over');d.ondrop=e=>{e.preventDefault();d.classList.remove('over');up(e.dataTransfer.files)};
+ d.tabIndex=0;d.onpaste=e=>{const f=[...e.clipboardData.files];if(f.length){e.preventDefault();up(f)}};draw();return d}
+function table(s,t){if(!t)return null;const key='T:'+t.id;let rows=ST.values[key]?JSON.parse(ST.values[key]):[];const prev=E('div'),ta=E('textarea',{placeholder:`Paste ${t.cols.length} columns from Excel/CSV (tab, ; or , separated). Max ${t.max_rows} rows.`});
+ const show=()=>{prev.replaceChildren(E('div',{class:'mut',style:'font-size:12px'},rows.length?`${rows.length} rows stored`+(rows.length>8?' – showing first 8':''):'No data yet'),
+  rows.length?E('table',{},E('tr',{},E('th',{},'#'),t.cols.map(c=>E('th',{},c.label+(c.unit?` [${c.unit}]`:'')))),rows.slice(0,8).map((r,i)=>E('tr',{},E('td',{class:'mut'},i+1),r.map(c=>E('td',{},c))))):null)};
+ ta.value=rows.map(r=>r.join('\t')).join('\n');
+ const save=async()=>{const lines=ta.value.replace(/\r/g,'').split('\n');while(lines.length&&!lines.at(-1).trim())lines.pop();
+  const sep=lines.some(l=>l.includes('\t'))?'\t':lines.some(l=>l.includes(';'))?';':',';rows=lines.map(l=>l.split(sep).map(x=>x.trim()));
+  if(rows.length>t.max_rows){toast(`Too many rows (${rows.length}); the template takes ${t.max_rows}. Resample the data.`,6000);return}
+  saving(1);try{const r=await post('/value',{sheet:s.name,cell:key,value:rows.length?JSON.stringify(rows):'',user:who.value});PROG[s.name]=r.progress;refreshNavSoft();checkSoon()}catch(e){bad(e)}saving(-1);show()};
+ ta.oninput=debounce(save,900);show();
+ return E('div',{class:'tbl'},E('b',{},'📈 '+t.label),E('span',{class:'mut',style:'font-size:12px'},` · starts at ${t.start}`),t.help?E('div',{class:'fh'},t.help):null,ta,prev)}
+async function afterChange(s){PROG[s.name]=(await api('/sheet/'+encodeURIComponent(s.name))).progress;refreshNavSoft();checkSoon()}
+const refreshNavSoft=debounce(()=>nav.replaceChildren(E('h4',{},'Workspace'),item('__overview','Overview',null),E('h4',{},'Template tabs'),...FM.sheets.map(s=>item(s.name,short(s.name),PROG[s.name]))),150);
+async function setSkip(sec,on){await post('/skip',{sheet:CUR,section:sec,skip:on});PROG=await api('/progress');openSheet(CUR);refreshNavSoft()}
+const checkSoon=debounce(()=>runCheck(),1200);
+async function runCheck(){if(!CUR||CUR==='__overview')return;const f=await api('/check/'+encodeURIComponent(CUR)),ord={error:0,warn:1,ok:2,info:3,tip:4,rule:5};
+ f.sort((a,b)=>ord[a.level]-ord[b.level]);$('#find').replaceChildren(...f.map(x=>E('div',{class:'fd '+x.level,'data-cell':x.cell||null,onclick:x.cell?()=>{const el=document.getElementById('c-'+x.cell);if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.focus()}}:null},x.level==='rule'?x.msg.slice(0,260)+(x.msg.length>260?'…':''):x.msg)))}
+async function ask(e){e.preventDefault();const q=$('#q').value.trim();if(!q||!CUR||CUR==='__overview')return toast('Open a tab first');$('#q').value='';const ms=$('#msgs');ms.append(E('div',{class:'m u'},q));const w=E('div',{class:'m a mut'},'…');ms.append(w);ms.scrollTop=1e9;
+ try{const r=await post('/chat',{sheet:CUR,message:q,history:hist});w.className='m a';w.textContent=r.answer;hist.push({role:'user',content:q},{role:'assistant',content:r.answer})}catch(x){w.textContent='Error: '+x.message}ms.scrollTop=1e9}
+function pick(acc,fn){const i=E('input',{type:'file',accept:acc});i.onchange=()=>i.files[0]&&fn(i.files[0]);i.click()}
+async function restore(f){if(!confirm('Restore will REPLACE all current data with the backup. Continue?'))return;const fd=new FormData();fd.append('file',f);try{const r=await api('/restore',{method:'POST',body:fd});toast(`Restored ${r.values} values and ${r.images} pictures`);await refreshNav();route()}catch(e){toast('Restore failed: '+e.message,6000)}}
+async function importX(f){const ow=confirm('Import typed values from this file.\n\nOK = overwrite fields that already have a value\nCancel = only fill empty fields');const fd=new FormData();fd.append('file',f);fd.append('mode',ow?'overwrite':'fill');
+ try{const r=await api('/import',{method:'POST',body:fd});toast(`Imported ${r.imported} values (${r.kept_existing} existing kept). ${r.note}`,8000);await refreshNav();route()}catch(e){toast('Import failed: '+e.message,6000)}}
+async function doExport(){if(pending>0){toast('Wait for saving to finish…');return}toast('Building the .xlsm…');location=A('/export')}
+init().catch(e=>{$('#main').textContent='Failed to load: '+e.message});
 </script></body></html>
