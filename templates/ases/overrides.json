@@ -1,0 +1,105 @@
+{
+ "Accumulator Pics": {
+  "fields": {
+   "S14": {
+    "unit": "mm",
+    "type": "number",
+    "col_header": "Thickness (metallic) [mm]"
+   },
+   "S15": {
+    "unit": "mm",
+    "type": "number",
+    "col_header": "Thickness (metallic) [mm]"
+   },
+   "S16": {
+    "unit": "mm",
+    "type": "number",
+    "col_header": "Thickness (metallic) [mm]"
+   },
+   "S17": {
+    "unit": "mm",
+    "type": "number",
+    "col_header": "Thickness (metallic) [mm]"
+   },
+   "W21": {
+    "skip": true
+   },
+   "Q34": {
+    "skip": true
+   }
+  }
+ },
+ "EV5.5.10-12 Cell Fixation": {
+  "fields": {
+   "M20": {
+    "type": "number",
+    "unit": "-"
+   },
+   "M22": {
+    "type": "number",
+    "unit": "N"
+   },
+   "M25": {
+    "type": "number",
+    "unit": "-"
+   },
+   "R28": {
+    "skip": true
+   }
+  },
+  "extra_fields": [
+   {
+    "cell": "M28",
+    "range": "M28:Q28",
+    "label": "Compressible materials (e. g. PCBs) in cell tab fixation stack-up?",
+    "col_header": null,
+    "type": "select",
+    "options": [
+     "No",
+     "Yes",
+     "N/A"
+    ],
+    "unit": null,
+    "default": "No"
+   }
+  ]
+ },
+ "EV5.5.5 Alt. Matl - 3pt Bending": {},
+ "EV5.5.9 Segment": {
+  "canvas": "B10"
+ },
+ "EV5.5.9 TSAC": {
+  "canvas": "B10"
+ },
+ "EV5.5.9 TSAC attachments": {
+  "canvas": "B10"
+ },
+ "Additional Info": {
+  "canvas": "B8",
+  "fields": {
+   "T5": {
+    "skip": true
+   }
+  }
+ },
+ "Datasheets Fiber": {
+  "canvas": "B14"
+ },
+ "Datasheets Other Matl": {
+  "canvas": "B16"
+ },
+ "Datasheets Glue": {
+  "canvas": "B14"
+ },
+ "EV5.5.14-17 Openings&Separation": {
+  "canvas": "T5"
+ },
+ "Cover Sheet": {
+  "fields": {
+   "O15": {
+    "type": "text",
+    "unit": null
+   }
+  }
+ }
+}

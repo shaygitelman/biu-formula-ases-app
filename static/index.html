@@ -1,0 +1,65 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BIU Formula – מילוי ASES</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,"Segoe UI",Arial;background:#f4f6f9;color:#1d2433}
+header{background:#0b3d91;color:#fff;padding:12px 20px;display:flex;align-items:center;gap:16px}
+header h1{font-size:18px;margin:0;flex:1}header input{padding:6px;border-radius:6px;border:0}
+.btn{background:#0b3d91;color:#fff;border:0;border-radius:8px;padding:8px 14px;cursor:pointer;font-size:14px}.btn.alt{background:#fff;color:#0b3d91;border:1px solid #0b3d91}
+header .btn{background:#ffb703;color:#000}
+main{display:grid;grid-template-columns:260px 1fr 360px;gap:14px;padding:14px;height:calc(100vh - 58px)}
+nav,section,aside{background:#fff;border-radius:12px;box-shadow:0 1px 4px #0001;overflow:auto}
+nav a{display:block;padding:10px 14px;border-bottom:1px solid #eee;cursor:pointer;font-size:14px}
+nav a.act{background:#e8f0ff;font-weight:600}.bar{height:5px;background:#eee;border-radius:3px;margin-top:5px}.bar i{display:block;height:100%;background:#2a9d8f;border-radius:3px}
+section{padding:18px}h2{margin:0 0 4px}.sub{color:#667;font-size:13px;margin-bottom:12px}
+.blk{border:1px solid #e3e7ee;border-radius:10px;padding:10px 12px;margin:10px 0}.blk h4{margin:0 0 8px;color:#0b3d91}
+.f{display:grid;grid-template-columns:1fr 220px;gap:8px;align-items:center;padding:5px 0;border-bottom:1px dashed #eee}
+.f label{font-size:13.5px;direction:ltr;text-align:left}.f label small{color:#889;display:block}
+.f input,.f select,.f textarea{width:100%;padding:6px;border:1px solid #cdd3dd;border-radius:6px;font-size:14px;direction:ltr}
+.f.filled input,.f.filled select,.f.filled textarea{border-color:#2a9d8f;background:#f3fbf9}
+.unit{font-size:12px;color:#666}.img{border:1px dashed #9ab;border-radius:10px;padding:10px;margin:8px 0}
+.img .lbl{direction:ltr;text-align:left;font-size:13px}.thumbs img{height:70px;margin:4px;border-radius:4px;border:1px solid #ccc}
+.thumbs span{display:inline-block;position:relative}.thumbs b{position:absolute;top:0;left:0;background:#c00;color:#fff;border-radius:50%;width:18px;height:18px;text-align:center;font-size:12px;cursor:pointer}
+aside{display:flex;flex-direction:column}aside .hd{padding:12px;border-bottom:1px solid #eee}#msgs{flex:1;overflow:auto;padding:10px;font-size:13.5px}
+.m{padding:8px 10px;border-radius:10px;margin:6px 0;white-space:pre-wrap}.m.u{background:#e8f0ff}.m.a{background:#f6f6f6}
+.find{padding:6px 8px;border-radius:6px;margin:4px 0;font-size:13px}.error{background:#fde2e1}.warn{background:#fff3cd}.ok{background:#d9f2e6}.tip,.info,.rule{background:#eef2f7}
+#chatf{display:flex;gap:6px;padding:10px;border-top:1px solid #eee}#chatf input{flex:1;padding:8px;border-radius:6px;border:1px solid #ccd}
+textarea.notes{width:100%;min-height:60px;border-radius:8px;border:1px solid #ccd;padding:6px}
+</style></head><body>
+<header><h1>🏎️ BIU Formula Student – מילוי ASES ל-FSG</h1>מסמך: <select id="tsel" onchange="location.search='?t='+this.value"></select> שם ממלא: <input id="user" placeholder="שם / תת-צוות"><a class="btn" id="exp" href="#">⬇ ייצוא XLSM</a></header>
+<main><nav id="nav"></nav><section id="sec"></section>
+<aside><div class="hd"><b>🤖 עוזר AI ללשונית</b><br><button class="btn" style="margin-top:8px" onclick="runCheck()">✔ בדוק את הסעיף</button> <span id="llm" class="unit"></span></div>
+<div id="msgs"></div><form id="chatf" onsubmit="ask(event)"><input id="q" placeholder="שאלו על הסעיף… (למשל: מה חסר כדי לא לקבל ריג'קט?)"><button class="btn">שלח</button></form></aside></main>
+<script>
+let FM, cur, ST, hist=[]; const TID=new URLSearchParams(location.search).get('t')||'ases'; const A=p=>'/api/'+TID+p;
+const $=s=>document.querySelector(s), user=()=>$('#user').value||'anon';
+$('#user').value=localStorage.u||''; $('#user').onchange=()=>localStorage.u=$('#user').value;
+async function J(u,o){const r=await fetch(u,o);return r.json()}
+async function init(){$('#exp').href=A('/export');const TT=await J('/api/templates');$('#tsel').innerHTML=Object.entries(TT).map(([k,v])=>`<option value="${k}" ${k==TID?'selected':''} ${v.loaded?'':'disabled'}>${k.toUpperCase()}${v.loaded?'':' (בקרוב)'}</option>`).join('');FM=await J(A('/fieldmap'));await nav();open(FM.sheets[0].name)}
+async function nav(){const p=await J(A('/progress'));$('#nav').innerHTML=FM.sheets.map((s,i)=>`<a class="${cur==s.name?'act':''}" onclick="open('${s.name.replace(/'/g,"\\'")}')">${i+1}. ${s.title_he}<br><small style="direction:ltr;color:#889">${s.name}</small> <small>${p[s.name].done}/${p[s.name].total}</small><div class="bar"><i style="width:${p[s.name].pct}%"></i></div></a>`).join('')}
+function esc(s){return (s??'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function fieldHtml(f){const v=ST.values[f.cell]??'';const id='f_'+f.cell;let inp;
+ if(f.type=='select')inp=`<select id="${id}"><option value="">— (${esc(f.default||'ריק')}) —</option>${f.options.map(o=>`<option ${o==v?'selected':''}>${esc(o)}</option>`).join('')}</select>`;
+ else if(f.type=='textarea')inp=`<textarea id="${id}" rows="2">${esc(v)}</textarea>`;
+ else inp=`<input id="${id}" ${f.type=='number'?'inputmode="decimal"':''} value="${esc(v)}" placeholder="${esc(f.default||'')}">`;
+ return `<div class="f ${v!==''?'filled':''}"><label>${esc(f.label)}${f.col_header?` – <b>${esc(f.col_header)}</b>`:''}<small>${f.cell}${f.unit?' · יחידות: '+esc(f.unit):''}</small></label><div>${inp}${f.unit?`<span class="unit"> ${esc(f.unit)}</span>`:''}</div></div>`}
+async function open(name){cur=name;hist=[];const s=FM.sheets.find(x=>x.name==name);ST=await J(A('/sheet/')+encodeURIComponent(name));
+ const groups={};s.fields.forEach(f=>(groups[f.block||0]=groups[f.block||0]||[]).push(f));
+ const rm=s.rules||{};let h=`<h2>${s.title_he}</h2><div class="sub" dir="ltr" style="text-align:right">${s.name} · ${s.fields.length} שדות · ${s.images.length} אזורי תמונה</div>`;
+ if(rm.mismatch) h+=`<div class="find warn">⚠ מספור כללים: התבנית היא 2026, התקנון 2027. ${esc(rm.mismatch)}</div>`; if(rm.rules_2027&&rm.rules_2027.length) h+=`<div class="sub">כללים רלוונטיים 2027: ${rm.rules_2027.map(r=>`<a href="#" onclick="showRule('${r}');return false">${r}</a>`).join(' · ')}</div>`;
+ for(const [b,fs] of Object.entries(groups)) h+=`<div class="blk">${b>0?`<h4>פריט / קבוצה #${b}</h4>`:''}${fs.map(fieldHtml).join('')}</div>`;
+ if(s.images.length) h+=`<h3>📷 תמונות / CAD</h3>`+s.images.map(i=>`<div class="img"><div class="lbl">${esc(i.label)} <small>(${i.anchor})</small></div><input type="file" accept="image/*" multiple onchange="upl(this,'${i.id}')"><div class="thumbs">${ST.images.filter(x=>x.slot==i.id).map(x=>`<span><img src="${A('/image/'+x.id)}" title="${esc(x.name)} – ${esc(x.user)}"><b onclick="delImg(${x.id})">×</b></span>`).join('')}</div></div>`).join('');
+ h+=`<h3>📝 הצדקות N/A / הערות לסעיף</h3><textarea class="notes" id="notes" placeholder="למשל: N/A בשורה X כי … (ייכתב ללשונית Additional Info)">${esc(ST.notes)}</textarea>`;
+ $('#sec').innerHTML=h;
+ s.fields.forEach(f=>{const el=$('#f_'+CSS.escape(f.cell));el.onchange=async()=>{const r=await J(A('/value'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sheet:name,cell:f.cell,value:el.value,user:user()})});el.closest('.f').classList.toggle('filled',el.value!=='');nav()}});
+ $('#notes').onchange=()=>J(A('/notes'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sheet:name,text:$('#notes').value,user:user()})});
+ $('#msgs').innerHTML='';nav()}
+async function upl(inp,slot){for(const f of inp.files){const fd=new FormData();fd.append('file',f);fd.append('sheet',cur);fd.append('slot',slot);fd.append('user',user());await fetch(A('/image'),{method:'POST',body:fd})}open(cur)}
+async function delImg(id){if(confirm('למחוק תמונה?')){await fetch(A('/image/')+id,{method:'DELETE'});open(cur)}}
+async function runCheck(){const r=await J(A('/check/')+encodeURIComponent(cur));$('#msgs').insertAdjacentHTML('beforeend',`<div class="m a"><b>תוצאות בדיקה – ${esc(cur)}</b>${r.map(x=>`<div class="find ${x.level}">${{error:'⛔',warn:'⚠️',ok:'✅',tip:'💡',info:'ℹ️',rule:'📘'}[x.level]} ${esc(x.msg)}</div>`).join('')}</div>`);$('#msgs').scrollTop=1e9}
+async function ask(e){e.preventDefault();const q=$('#q').value;if(!q)return;$('#q').value='';$('#msgs').insertAdjacentHTML('beforeend',`<div class="m u">${esc(q)}</div>`);
+ const r=await J(A('/chat'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sheet:cur,message:q,history:hist})});
+ hist.push({role:'user',content:q},{role:'assistant',content:r.answer});$('#llm').textContent=r.llm?'LLM מחובר':'מצב חוקים (ללא LLM)';
+ $('#msgs').insertAdjacentHTML('beforeend',`<div class="m a">${esc(r.answer)}</div>`);$('#msgs').scrollTop=1e9}
+async function showRule(r){const x=await J('/api/rules/'+r);$('#msgs').insertAdjacentHTML('beforeend',`<div class="m a" dir="ltr"><b>${r} (FS Rules 2027)</b>\n${esc(x.text)}</div>`);$('#msgs').scrollTop=1e9}
+init();
+</script></body></html>

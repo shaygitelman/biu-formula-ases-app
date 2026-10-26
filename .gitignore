@@ -1,0 +1,5 @@
+__pycache__/
+data/app.db
+data/export_*
+data/server.log
+uploads/

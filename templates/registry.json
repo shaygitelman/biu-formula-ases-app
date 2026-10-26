@@ -1,0 +1,2 @@
+{"ases": {"title": "ASES – Accumulator Structural Equivalency Spreadsheet", "owner_he": "מתח גבוה (+מכניקה)", "file": "FS26_ASES_v1.0.xlsm", "checks": "ases", "enabled": true},
+ "ses":  {"title": "SES – Structural Equivalency Spreadsheet", "owner_he": "מכניקה/שלדה", "file": "FS26_SES_v1.3.xlsx", "checks": "generic", "enabled": false, "note": "template downloaded; field map not curated yet"}}

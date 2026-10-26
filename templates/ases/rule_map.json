@@ -1,0 +1,19 @@
+{
+ "_note": "Template = FS 2026 ASES v1.0; rules = FS Rules 2027 v1.0. 2027 reorganized EV5.5 -> many tab rule numbers point to different rules now.",
+ "Cover Sheet": {"template_refs": ["EV5.5.4","EV5.5.5","EV5.5.3","EV5.5.6","EV5.5.8","EV5.5.10","EV5.5.12","EV4.5.12","EV5.5.13","T10","EV5.5.7","EV5.5.14","EV5.5.18","EV5.4.6"], "rules_2027": ["EV5.5.4"], "mismatch": "Cover-sheet rule numbers are 2026 numbering; see each tab for the 2027 equivalent."},
+ "Accumulator Pics": {"template_refs": ["EV5.5.4","EV5.5.5","T3.4.3"], "rules_2027": ["EV5.5.4","EV5.5.5","EV5.5.6","EV5.5.3"], "mismatch": null},
+ "EV5.5.5 Alt. Matl - 3pt Bending": {"template_refs": ["EV5.5.5"], "rules_2027": ["EV5.5.5","EV5.5.6","EV5.5.10"], "mismatch": "2027: composite requirements are EV5.5.6; additive-manufactured structural parts need physical testing (EV5.5.10)."},
+ "EV5.5.5 Alt. Matl - Shear": {"template_refs": ["EV5.5.5"], "rules_2027": ["EV5.5.6"], "mismatch": "2027: laminate perimeter shear data requirement is EV5.5.6."},
+ "Datasheets Fiber": {"template_refs": ["EV5.5.3","EV5.5.4"], "rules_2027": ["EV5.5.3","EV5.5.4"], "mismatch": null},
+ "Datasheets Other Matl": {"template_refs": ["EV5.5.3","EV5.5.4"], "rules_2027": ["EV5.5.3","EV5.5.4"], "mismatch": null},
+ "Datasheets Glue": {"template_refs": ["EV5.5.3","EV5.5.4"], "rules_2027": ["EV5.5.3","EV5.5.4"], "mismatch": null},
+ "EV5.5.10-12 Cell Fixation": {"template_refs": ["EV5.5.10","EV5.5.11","EV5.5.12","EV4.5.12"], "rules_2027": ["EV5.5.12","EV5.5.14","EV5.5.15","EV4.5.12"], "mismatch": "2027 renumbering: stress limits 0.05/1.0 MPa = EV5.5.14, friction testing = EV5.5.15, pouch fixation = EV5.5.12. 2027 EV5.5.10 is now additive manufacturing and EV5.5.11 is section walls. EV5.5.12 now also requires considering all cell states."},
+ "EV5.5.9 Segment": {"template_refs": ["EV5.5.9"], "rules_2027": ["EV5.5.8","EV5.5.13"], "mismatch": "2027 load-case design requirement = EV5.5.8; EV5.5.13 (2027): segment parts in the high-current path must not carry mechanical loads."},
+ "EV5.5.9 TSAC": {"template_refs": ["EV5.5.9"], "rules_2027": ["EV5.5.8","EV5.5.11","EV5.3.2","EV5.3.3"], "mismatch": "2027 load-case design = EV5.5.8; section walls = EV5.5.11; openable TSAC/segment removal <15 min = EV5.3.2/5.3.3."},
+ "EV5.5.9 TSAC attachments": {"template_refs": ["EV5.5.9","T3.5.9"], "rules_2027": ["EV5.5.8","EV5.5.9","T10.1.4"], "mismatch": "2027: EV5.5.9 = at least 2 attachment points; loads = EV5.5.8; bolted TSAC mounting = T10.1.4."},
+ "EV5.5.13 Fasteners": {"template_refs": ["EV5.5.13","T10"], "rules_2027": ["EV5.5.16","T10.1.2","T10.1.3","T10.2.1","T10.2.2","EV4.5.13","EV4.5.14"], "mismatch": "2027: fastener rule moved to EV5.5.16 (2027 EV5.5.13 = no mechanical load on high-current path)."},
+ "EV5.5.14-17 Openings&Separation": {"template_refs": ["EV5.5.14","EV5.5.15","EV5.5.16","EV5.5.17","EV5.4.6"], "rules_2027": ["EV5.3.4","EV5.5.11","EV5.5.17","EV5.5.18","EV5.5.19","EV5.5.20","EV5.5.21"], "mismatch": "2027: 120 V / 6 MJ / 12 kg limits apply per mechanical SECTION (EV5.3.4), no longer per segment; holes=EV5.5.18, openings direction=EV5.5.19, venting=EV5.5.20, relief valve=EV5.5.21, AIRs/fuse separation=EV5.5.17."},
+ "Additional Info": {"template_refs": [], "rules_2027": ["EV5.5.4"], "mismatch": null},
+ "Version History": {"template_refs": [], "rules_2027": [], "mismatch": null},
+ "Rules Clarifications": {"template_refs": [], "rules_2027": [], "mismatch": null}
+}

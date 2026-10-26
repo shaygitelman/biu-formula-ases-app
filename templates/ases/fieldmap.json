@@ -1,0 +1,5255 @@
+{
+ "template": "FS26_ASES_v1.0.xlsm",
+ "sheets": [
+  {
+   "name": "Cover Sheet",
+   "title_he": "דף שער ופרטי צוות",
+   "fields": [
+    {
+     "cell": "D15",
+     "range": "D15:J15",
+     "label": "University Name",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "O15",
+     "range": "O15:V15",
+     "label": "Car No.(s) & Event(s)",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "D16",
+     "range": "D16:J16",
+     "label": "Team Contact",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "N16",
+     "range": "N16:V16",
+     "label": "Email Address",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "D17",
+     "range": "D17:J17",
+     "label": "Faculty Advisor",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "N17",
+     "range": "N17:V17",
+     "label": "Email Address",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "M25",
+     "range": "M25:O25",
+     "label": "EV5.5.4/5",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "M27",
+     "range": "M27:O27",
+     "label": "EV5.5.3-7",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "N/A",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "M28",
+     "range": "M28:O28",
+     "label": "EV5.5.3-7",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "N/A",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "M30",
+     "range": "M30:O30",
+     "label": "EV5.5.3/4",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "N/A",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "M31",
+     "range": "M31:O31",
+     "label": "EV5.5.3/4",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "N/A",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "M32",
+     "range": "M32:O32",
+     "label": "EV5.5.3/4",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "N/A",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "M33",
+     "range": "M33",
+     "label": "EV5.5.6/8",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "N33",
+     "range": "N33",
+     "label": "EV5.5.6/8",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "O33",
+     "range": "O33",
+     "label": "EV5.5.6/8",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "M34",
+     "range": "M34",
+     "label": "EV5.5.6/8",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "N34",
+     "range": "N34",
+     "label": "EV5.5.6/8",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "O34",
+     "range": "O34",
+     "label": "EV5.5.6/8",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "M35",
+     "range": "M35",
+     "label": "EV5.5.6/8",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "N35",
+     "range": "N35",
+     "label": "EV5.5.6/8",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "O35",
+     "range": "O35",
+     "label": "EV5.5.6/8",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "M36",
+     "range": "M36",
+     "label": "EV5.5.10-12, EV4.5.12",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "N36",
+     "range": "N36",
+     "label": "EV5.5.10-12, EV4.5.12",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "O36",
+     "range": "O36",
+     "label": "EV5.5.10-12, EV4.5.12",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "M37",
+     "range": "M37",
+     "label": "EV5.5.13, T10",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "N37",
+     "range": "N37",
+     "label": "EV5.5.13, T10",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "O37",
+     "range": "O37",
+     "label": "EV5.5.13, T10",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "M38",
+     "range": "M38:O38",
+     "label": "EV5.5.7/14-18, EV5.4.6",
+     "col_header": "X",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    }
+   ],
+   "images": [],
+   "notes": null
+  },
+  {
+   "name": "Accumulator Pics",
+   "title_he": "תמונות ומידות המצבר",
+   "fields": [
+    {
+     "cell": "U8",
+     "range": "U8",
+     "label": "Floor",
+     "col_header": "Outer skin layup",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "V8",
+     "range": "V8",
+     "label": "Floor",
+     "col_header": "Core material",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "X8",
+     "range": "X8",
+     "label": "Floor",
+     "col_header": "inner skin layup",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "Z8",
+     "range": "Z8",
+     "label": "Floor",
+     "col_header": "Proof of T3.4.3",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "U9",
+     "range": "U9",
+     "label": "Ext. Walls",
+     "col_header": "Outer skin layup",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "V9",
+     "range": "V9",
+     "label": "Ext. Walls",
+     "col_header": "Core material",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "X9",
+     "range": "X9",
+     "label": "Ext. Walls",
+     "col_header": "inner skin layup",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "Z9",
+     "range": "Z9",
+     "label": "Ext. Walls",
+     "col_header": "Proof of T3.4.3",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "U10",
+     "range": "U10",
+     "label": "Int. Walls",
+     "col_header": "Outer skin layup",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "V10",
+     "range": "V10",
+     "label": "Int. Walls",
+     "col_header": "Core material",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "X10",
+     "range": "X10",
+     "label": "Int. Walls",
+     "col_header": "inner skin layup",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "Z10",
+     "range": "Z10",
+     "label": "Int. Walls",
+     "col_header": "Proof of T3.4.3",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "U11",
+     "range": "U11",
+     "label": "Cover",
+     "col_header": "Outer skin layup",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "V11",
+     "range": "V11",
+     "label": "Cover",
+     "col_header": "Core material",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "X11",
+     "range": "X11",
+     "label": "Cover",
+     "col_header": "inner skin layup",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "Z11",
+     "range": "Z11",
+     "label": "Cover",
+     "col_header": "Proof of T3.4.3",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "E12",
+     "range": "E12",
+     "label": "Material",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Steel",
+      "Aluminium",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Steel",
+     "block": 0
+    },
+    {
+     "cell": "E14",
+     "range": "E14",
+     "label": "Width [mm]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "300",
+     "block": 0
+    },
+    {
+     "cell": "S14",
+     "range": "S14",
+     "label": "Floor",
+     "col_header": "Thickness (metallic) [mm]",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "4",
+     "block": 0
+    },
+    {
+     "cell": "S15",
+     "range": "S15",
+     "label": "Ext. Walls",
+     "col_header": "Thickness (metallic) [mm]",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "4",
+     "block": 0
+    },
+    {
+     "cell": "S16",
+     "range": "S16",
+     "label": "Int. Walls",
+     "col_header": "Thickness (metallic) [mm]",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "4",
+     "block": 0
+    },
+    {
+     "cell": "S17",
+     "range": "S17",
+     "label": "Cover",
+     "col_header": "Thickness (metallic) [mm]",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "V22",
+     "range": "V22",
+     "label": "Isometric View of Accumulator in chassis",
+     "col_header": "Image provided",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "V23",
+     "range": "V23",
+     "label": "Sideview of Acc. in chassis",
+     "col_header": "Core material",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E36",
+     "range": "E36",
+     "label": "Material",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Steel",
+      "Aluminium",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Steel",
+     "block": 0
+    },
+    {
+     "cell": "E38",
+     "range": "E38",
+     "label": "Height [mm]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "E60",
+     "range": "E60",
+     "label": "Material",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Steel",
+      "Aluminium",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Steel",
+     "block": 0
+    },
+    {
+     "cell": "E62",
+     "range": "E62",
+     "label": "Height [mm]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "E84",
+     "range": "E84",
+     "label": "Material",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Steel",
+      "Aluminium",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Steel",
+     "block": 0
+    },
+    {
+     "cell": "E86",
+     "range": "E86",
+     "label": "Width [mm]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": null,
+     "block": 0
+    }
+   ],
+   "images": [
+    {
+     "id": "A5",
+     "anchor": "A6",
+     "label": "Please attach pictures of your accumulator in the table below for review during the ASES process. \nAll walls/panels/lay-ups must be colour coded to show different walls. Three view drawings and isomet"
+    },
+    {
+     "id": "B17",
+     "anchor": "B18",
+     "label": "Paste Image of width of the accumulator floor."
+    },
+    {
+     "id": "B18",
+     "anchor": "B19",
+     "label": "Paste Image of Floor Thickness."
+    },
+    {
+     "id": "R25",
+     "anchor": "R26",
+     "label": "Paste Image of Accumulator in chassis"
+    },
+    {
+     "id": "R27",
+     "anchor": "R28",
+     "label": "Paste image of sideview of accumulator in chassis, with the height clearly marked"
+    },
+    {
+     "id": "B41",
+     "anchor": "B42",
+     "label": "Paste Image of height of the external wall."
+    },
+    {
+     "id": "B42",
+     "anchor": "B43",
+     "label": "Paste Image of wall thickness."
+    },
+    {
+     "id": "R45",
+     "anchor": "R46",
+     "label": "Any pictures (e.g. full view, sections) that might be in interest of the reviewer/scrutineer."
+    },
+    {
+     "id": "B65",
+     "anchor": "B66",
+     "label": "Paste Image of height of the internal wall."
+    },
+    {
+     "id": "B66",
+     "anchor": "B67",
+     "label": "Paste Image of wall thickness."
+    },
+    {
+     "id": "B89",
+     "anchor": "B90",
+     "label": "Paste Image of width of the internal wall."
+    },
+    {
+     "id": "B90",
+     "anchor": "B91",
+     "label": "Paste Image of cover thickness."
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "EV5.5.5 Alt. Matl - 3pt Bending",
+   "title_he": "חומר חלופי – כפיפה 3 נקודות",
+   "fields": [
+    {
+     "cell": "C46",
+     "range": "C46:D46",
+     "label": "x1 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 1
+    },
+    {
+     "cell": "G46",
+     "range": "G46:H46",
+     "label": "y1 (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 1
+    },
+    {
+     "cell": "V46",
+     "range": "V46:W46",
+     "label": "x1 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 2
+    },
+    {
+     "cell": "Z46",
+     "range": "Z46:AA46",
+     "label": "y1 (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 2
+    },
+    {
+     "cell": "AO46",
+     "range": "AO46:AP46",
+     "label": "x1 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 3
+    },
+    {
+     "cell": "AS46",
+     "range": "AS46:AT46",
+     "label": "y1 (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 3
+    },
+    {
+     "cell": "BH46",
+     "range": "BH46:BI46",
+     "label": "x1 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 4
+    },
+    {
+     "cell": "BL46",
+     "range": "BL46:BM46",
+     "label": "y1 (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 4
+    },
+    {
+     "cell": "CA46",
+     "range": "CA46:CB46",
+     "label": "x1 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 5
+    },
+    {
+     "cell": "CE46",
+     "range": "CE46:CF46",
+     "label": "y1 (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 5
+    },
+    {
+     "cell": "C47",
+     "range": "C47:D47",
+     "label": "x2 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 1
+    },
+    {
+     "cell": "G47",
+     "range": "G47:H47",
+     "label": "y2 (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 1
+    },
+    {
+     "cell": "V47",
+     "range": "V47:W47",
+     "label": "x2 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 2
+    },
+    {
+     "cell": "Z47",
+     "range": "Z47:AA47",
+     "label": "y2 (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 2
+    },
+    {
+     "cell": "AO47",
+     "range": "AO47:AP47",
+     "label": "x2 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 3
+    },
+    {
+     "cell": "AS47",
+     "range": "AS47:AT47",
+     "label": "y2 (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 3
+    },
+    {
+     "cell": "BH47",
+     "range": "BH47:BI47",
+     "label": "x2 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 4
+    },
+    {
+     "cell": "BL47",
+     "range": "BL47:BM47",
+     "label": "y2 (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 4
+    },
+    {
+     "cell": "CA47",
+     "range": "CA47:CB47",
+     "label": "x2 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 5
+    },
+    {
+     "cell": "CE47",
+     "range": "CE47:CF47",
+     "label": "y2 (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 5
+    },
+    {
+     "cell": "C50",
+     "range": "C50:D50",
+     "label": "ymax (N)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 1
+    },
+    {
+     "cell": "V50",
+     "range": "V50:W50",
+     "label": "ymax (N)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 2
+    },
+    {
+     "cell": "AO50",
+     "range": "AO50:AP50",
+     "label": "ymax (N)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 3
+    },
+    {
+     "cell": "BH50",
+     "range": "BH50:BI50",
+     "label": "ymax (N)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 4
+    },
+    {
+     "cell": "CA51",
+     "range": "CA51:CB51",
+     "label": "n",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": null,
+     "default": "1",
+     "block": 0
+    },
+    {
+     "cell": "CA52",
+     "range": "CA52:CB52",
+     "label": "Do (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "25.4",
+     "block": 0
+    },
+    {
+     "cell": "C53",
+     "range": "C53:D53",
+     "label": "l (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "200",
+     "block": 1
+    },
+    {
+     "cell": "V53",
+     "range": "V53:W53",
+     "label": "l (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "200",
+     "block": 2
+    },
+    {
+     "cell": "AO53",
+     "range": "AO53:AP53",
+     "label": "l (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "200",
+     "block": 3
+    },
+    {
+     "cell": "BH53",
+     "range": "BH53:BI53",
+     "label": "l (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "200",
+     "block": 4
+    },
+    {
+     "cell": "CA53",
+     "range": "CA53:CB53",
+     "label": "Di (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "22.1",
+     "block": 0
+    },
+    {
+     "cell": "C54",
+     "range": "C54:D54",
+     "label": "h (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "150",
+     "block": 1
+    },
+    {
+     "cell": "V54",
+     "range": "V54:W54",
+     "label": "h (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "150",
+     "block": 2
+    },
+    {
+     "cell": "AO54",
+     "range": "AO54:AP54",
+     "label": "h (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "150",
+     "block": 3
+    },
+    {
+     "cell": "BH54",
+     "range": "BH54:BI54",
+     "label": "h (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "150",
+     "block": 4
+    },
+    {
+     "cell": "C55",
+     "range": "C55:D55",
+     "label": "b (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 1
+    },
+    {
+     "cell": "V55",
+     "range": "V55:W55",
+     "label": "b (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 2
+    },
+    {
+     "cell": "AO55",
+     "range": "AO55:AP55",
+     "label": "b (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 3
+    },
+    {
+     "cell": "BH55",
+     "range": "BH55:BI55",
+     "label": "b (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "0",
+     "block": 4
+    },
+    {
+     "cell": "C56",
+     "range": "C56:D56",
+     "label": "t1 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "1",
+     "block": 1
+    },
+    {
+     "cell": "V56",
+     "range": "V56:W56",
+     "label": "t1 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "1",
+     "block": 2
+    },
+    {
+     "cell": "AO56",
+     "range": "AO56:AP56",
+     "label": "t1 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "1",
+     "block": 3
+    },
+    {
+     "cell": "BH56",
+     "range": "BH56:BI56",
+     "label": "t1 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "1",
+     "block": 4
+    },
+    {
+     "cell": "C57",
+     "range": "C57:D57",
+     "label": "t2 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "1",
+     "block": 1
+    },
+    {
+     "cell": "V57",
+     "range": "V57:W57",
+     "label": "t2 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "1",
+     "block": 2
+    },
+    {
+     "cell": "AO57",
+     "range": "AO57:AP57",
+     "label": "t2 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "1",
+     "block": 3
+    },
+    {
+     "cell": "BH57",
+     "range": "BH57:BI57",
+     "label": "t2 (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": "1",
+     "block": 4
+    },
+    {
+     "cell": "C61",
+     "range": "C61:D61",
+     "label": "tx (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "V61",
+     "range": "V61:W61",
+     "label": "tx (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AO61",
+     "range": "AO61:AP61",
+     "label": "tx (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "BH61",
+     "range": "BH61:BI61",
+     "label": "tx (mm)",
+     "col_header": "Supporting points shall be at least 1 mm apart!",
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": null,
+     "block": 4
+    }
+   ],
+   "images": [
+    {
+     "id": "B7",
+     "anchor": "B8",
+     "label": "Paste images of test setup here"
+    },
+    {
+     "id": "U7",
+     "anchor": "U8",
+     "label": "Paste images of test setup here"
+    },
+    {
+     "id": "AN7",
+     "anchor": "AN8",
+     "label": "Paste images of test setup here"
+    },
+    {
+     "id": "BG7",
+     "anchor": "BG8",
+     "label": "Paste images of test setup here"
+    },
+    {
+     "id": "BZ7",
+     "anchor": "BZ8",
+     "label": "Paste images of test setup here"
+    },
+    {
+     "id": "F67",
+     "anchor": "F68",
+     "label": "Picture of measured testpiece thickness"
+    },
+    {
+     "id": "Y67",
+     "anchor": "Y68",
+     "label": "Picture of measured testpiece thickness"
+    },
+    {
+     "id": "AR67",
+     "anchor": "AR68",
+     "label": "Picture of measured testpiece thickness"
+    },
+    {
+     "id": "BK67",
+     "anchor": "BK68",
+     "label": "Picture of measured testpiece thickness"
+    },
+    {
+     "id": "CD67",
+     "anchor": "CD68",
+     "label": "Picture of measured testpiece thickness"
+    },
+    {
+     "id": "F70",
+     "anchor": "F71",
+     "label": "Paste image of measured testpieve between an accurate measuring device,"
+    },
+    {
+     "id": "Y70",
+     "anchor": "Y71",
+     "label": "Paste image of measured testpieve between an accurate measuring device,"
+    },
+    {
+     "id": "AR70",
+     "anchor": "AR71",
+     "label": "Paste image of measured testpieve between an accurate measuring device,"
+    },
+    {
+     "id": "BK70",
+     "anchor": "BK71",
+     "label": "Paste image of measured testpieve between an accurate measuring device,"
+    },
+    {
+     "id": "CD70",
+     "anchor": "CD71",
+     "label": "Paste image of measured testpieve between an accurate measuring device,"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "EV5.5.5 Alt. Matl - Shear",
+   "title_he": "חומר חלופי – גזירה",
+   "fields": [
+    {
+     "cell": "D48",
+     "range": "D48:E48",
+     "label": "(N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 1
+    },
+    {
+     "cell": "W48",
+     "range": "W48:X48",
+     "label": "(N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 2
+    },
+    {
+     "cell": "AP48",
+     "range": "AP48:AQ48",
+     "label": "(N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 3
+    },
+    {
+     "cell": "BI48",
+     "range": "BI48:BJ48",
+     "label": "(N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 4
+    },
+    {
+     "cell": "D49",
+     "range": "D49:E49",
+     "label": "Higher Peak (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 1
+    },
+    {
+     "cell": "W49",
+     "range": "W49:X49",
+     "label": "Higher Peak (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 2
+    },
+    {
+     "cell": "AP49",
+     "range": "AP49:AQ49",
+     "label": "Higher Peak (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 3
+    },
+    {
+     "cell": "BI49",
+     "range": "BI49:BJ49",
+     "label": "Higher Peak (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": "0",
+     "block": 4
+    }
+   ],
+   "images": [
+    {
+     "id": "B7",
+     "anchor": "B8",
+     "label": "Paste images of test setup here"
+    },
+    {
+     "id": "U7",
+     "anchor": "U8",
+     "label": "Paste images of test setup here"
+    },
+    {
+     "id": "AN7",
+     "anchor": "AN8",
+     "label": "Paste images of test setup here"
+    },
+    {
+     "id": "BG7",
+     "anchor": "BG8",
+     "label": "Paste images of test setup here"
+    },
+    {
+     "id": "F60",
+     "anchor": "F61",
+     "label": "Picture of measured testpiece thickness"
+    },
+    {
+     "id": "Y60",
+     "anchor": "Y61",
+     "label": "Picture of measured testpiece thickness"
+    },
+    {
+     "id": "AR60",
+     "anchor": "AR61",
+     "label": "Picture of measured testpiece thickness"
+    },
+    {
+     "id": "BK60",
+     "anchor": "BK61",
+     "label": "Picture of measured testpiece thickness"
+    },
+    {
+     "id": "F63",
+     "anchor": "F64",
+     "label": "Paste image of measured testpieve between an accurate measuring device,"
+    },
+    {
+     "id": "Y63",
+     "anchor": "Y64",
+     "label": "Paste image of measured testpieve between an accurate measuring device,"
+    },
+    {
+     "id": "AR63",
+     "anchor": "AR64",
+     "label": "Paste image of measured testpieve between an accurate measuring device,"
+    },
+    {
+     "id": "BK63",
+     "anchor": "BK64",
+     "label": "Paste image of measured testpieve between an accurate measuring device,"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "Datasheets Fiber",
+   "title_he": "דאטהשיטים – סיבים",
+   "fields": [
+    {
+     "cell": "A7",
+     "range": "A7:P8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Carbon Fiber",
+      "Aramid Fiber",
+      "Glass Fiber",
+      "Aramid-honeycomb",
+      "Aluminium-honeycomb",
+      "Foam",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Carbon Fiber",
+     "block": 1
+    },
+    {
+     "cell": "R7",
+     "range": "R7:AG8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Carbon Fiber",
+      "Aramid Fiber",
+      "Glass Fiber",
+      "Aramid-honeycomb",
+      "Aluminium-honeycomb",
+      "Foam",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Carbon Fiber",
+     "block": 2
+    },
+    {
+     "cell": "AI7",
+     "range": "AI7:AX8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Carbon Fiber",
+      "Aramid Fiber",
+      "Glass Fiber",
+      "Aramid-honeycomb",
+      "Aluminium-honeycomb",
+      "Foam",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Carbon Fiber",
+     "block": 3
+    },
+    {
+     "cell": "AZ7",
+     "range": "AZ7:BO8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Carbon Fiber",
+      "Aramid Fiber",
+      "Glass Fiber",
+      "Aramid-honeycomb",
+      "Aluminium-honeycomb",
+      "Foam",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Carbon Fiber",
+     "block": 4
+    },
+    {
+     "cell": "BQ7",
+     "range": "BQ7:CF8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Carbon Fiber",
+      "Aramid Fiber",
+      "Glass Fiber",
+      "Aramid-honeycomb",
+      "Aluminium-honeycomb",
+      "Foam",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Carbon Fiber",
+     "block": 5
+    },
+    {
+     "cell": "CH7",
+     "range": "CH7:CW8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Carbon Fiber",
+      "Aramid Fiber",
+      "Glass Fiber",
+      "Aramid-honeycomb",
+      "Aluminium-honeycomb",
+      "Foam",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Carbon Fiber",
+     "block": 6
+    },
+    {
+     "cell": "CY7",
+     "range": "CY7:DN8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Carbon Fiber",
+      "Aramid Fiber",
+      "Glass Fiber",
+      "Aramid-honeycomb",
+      "Aluminium-honeycomb",
+      "Foam",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Carbon Fiber",
+     "block": 7
+    },
+    {
+     "cell": "DP7",
+     "range": "DP7:EE8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Carbon Fiber",
+      "Aramid Fiber",
+      "Glass Fiber",
+      "Aramid-honeycomb",
+      "Aluminium-honeycomb",
+      "Foam",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Carbon Fiber",
+     "block": 8
+    },
+    {
+     "cell": "E9",
+     "range": "E9:F10",
+     "label": "mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 1
+    },
+    {
+     "cell": "L9",
+     "range": "L9:P10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 1
+    },
+    {
+     "cell": "V9",
+     "range": "V9:W10",
+     "label": "mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 2
+    },
+    {
+     "cell": "AC9",
+     "range": "AC9:AG10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 2
+    },
+    {
+     "cell": "AM9",
+     "range": "AM9:AN10",
+     "label": "mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 3
+    },
+    {
+     "cell": "AT9",
+     "range": "AT9:AX10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 3
+    },
+    {
+     "cell": "BD9",
+     "range": "BD9:BE10",
+     "label": "mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 4
+    },
+    {
+     "cell": "BK9",
+     "range": "BK9:BO10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 4
+    },
+    {
+     "cell": "BU9",
+     "range": "BU9:BV10",
+     "label": "mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 5
+    },
+    {
+     "cell": "CB9",
+     "range": "CB9:CF10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 5
+    },
+    {
+     "cell": "CL9",
+     "range": "CL9:CM10",
+     "label": "mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 6
+    },
+    {
+     "cell": "CS9",
+     "range": "CS9:CW10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 6
+    },
+    {
+     "cell": "DC9",
+     "range": "DC9:DD10",
+     "label": "mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 7
+    },
+    {
+     "cell": "DJ9",
+     "range": "DJ9:DN10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 7
+    },
+    {
+     "cell": "DT9",
+     "range": "DT9:DU10",
+     "label": "mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 8
+    },
+    {
+     "cell": "EA9",
+     "range": "EA9:EE10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 8
+    }
+   ],
+   "images": [
+    {
+     "id": "B14",
+     "anchor": "B14",
+     "label": "Pictures / CAD / calculations / explanations"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "Datasheets Other Matl",
+   "title_he": "דאטהשיטים – חומרים אחרים",
+   "fields": [
+    {
+     "cell": "A7",
+     "range": "A7:P8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Aluminium",
+      "Steel",
+      "Plastic",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Steel",
+     "block": 1
+    },
+    {
+     "cell": "R7",
+     "range": "R7:AG8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Aluminium",
+      "Steel",
+      "Plastic",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Aluminium",
+     "block": 2
+    },
+    {
+     "cell": "AI7",
+     "range": "AI7:AX8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Aluminium",
+      "Steel",
+      "Plastic",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Aluminium",
+     "block": 3
+    },
+    {
+     "cell": "AZ7",
+     "range": "AZ7:BO8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Aluminium",
+      "Steel",
+      "Plastic",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Aluminium",
+     "block": 4
+    },
+    {
+     "cell": "BQ7",
+     "range": "BQ7:CF8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Aluminium",
+      "Steel",
+      "Plastic",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Aluminium",
+     "block": 5
+    },
+    {
+     "cell": "CH7",
+     "range": "CH7:CW8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Aluminium",
+      "Steel",
+      "Plastic",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Aluminium",
+     "block": 6
+    },
+    {
+     "cell": "CY7",
+     "range": "CY7:DN8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Aluminium",
+      "Steel",
+      "Plastic",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Aluminium",
+     "block": 7
+    },
+    {
+     "cell": "DP7",
+     "range": "DP7:EE8",
+     "label": "Material type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Aluminium",
+      "Steel",
+      "Plastic",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Aluminium",
+     "block": 8
+    },
+    {
+     "cell": "E9",
+     "range": "E9:F10",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 1
+    },
+    {
+     "cell": "L9",
+     "range": "L9:P10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 1
+    },
+    {
+     "cell": "V9",
+     "range": "V9:W10",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 2
+    },
+    {
+     "cell": "AC9",
+     "range": "AC9:AG10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 2
+    },
+    {
+     "cell": "AM9",
+     "range": "AM9:AN10",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 3
+    },
+    {
+     "cell": "AT9",
+     "range": "AT9:AX10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 3
+    },
+    {
+     "cell": "BD9",
+     "range": "BD9:BE10",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 4
+    },
+    {
+     "cell": "BK9",
+     "range": "BK9:BO10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 4
+    },
+    {
+     "cell": "BU9",
+     "range": "BU9:BV10",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 5
+    },
+    {
+     "cell": "CB9",
+     "range": "CB9:CF10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 5
+    },
+    {
+     "cell": "CL9",
+     "range": "CL9:CM10",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 6
+    },
+    {
+     "cell": "CS9",
+     "range": "CS9:CW10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 6
+    },
+    {
+     "cell": "DC9",
+     "range": "DC9:DD10",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 7
+    },
+    {
+     "cell": "DJ9",
+     "range": "DJ9:DN10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 7
+    },
+    {
+     "cell": "DT9",
+     "range": "DT9:DU10",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 8
+    },
+    {
+     "cell": "EA9",
+     "range": "EA9:EE10",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 8
+    },
+    {
+     "cell": "E11",
+     "range": "E11:F12",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 1
+    },
+    {
+     "cell": "L11",
+     "range": "L11:P12",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "V11",
+     "range": "V11:W12",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 2
+    },
+    {
+     "cell": "AC11",
+     "range": "AC11:AG12",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AM11",
+     "range": "AM11:AN12",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 3
+    },
+    {
+     "cell": "AT11",
+     "range": "AT11:AX12",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "BD11",
+     "range": "BD11:BE12",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 4
+    },
+    {
+     "cell": "BK11",
+     "range": "BK11:BO12",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 4
+    },
+    {
+     "cell": "BU11",
+     "range": "BU11:BV12",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 5
+    },
+    {
+     "cell": "CB11",
+     "range": "CB11:CF12",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 5
+    },
+    {
+     "cell": "CL11",
+     "range": "CL11:CM12",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 6
+    },
+    {
+     "cell": "CS11",
+     "range": "CS11:CW12",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 6
+    },
+    {
+     "cell": "DC11",
+     "range": "DC11:DD12",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 7
+    },
+    {
+     "cell": "DJ11",
+     "range": "DJ11:DN12",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 7
+    },
+    {
+     "cell": "DT11",
+     "range": "DT11:DU12",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 8
+    },
+    {
+     "cell": "EA11",
+     "range": "EA11:EE12",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 8
+    }
+   ],
+   "images": [
+    {
+     "id": "B16",
+     "anchor": "B16",
+     "label": "Pictures / CAD / calculations / explanations"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "Datasheets Glue",
+   "title_he": "דאטהשיטים – דבקים",
+   "fields": [
+    {
+     "cell": "E7",
+     "range": "E7:F8",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 1
+    },
+    {
+     "cell": "L7",
+     "range": "L7:P8",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 1
+    },
+    {
+     "cell": "V7",
+     "range": "V7:W8",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 2
+    },
+    {
+     "cell": "AC7",
+     "range": "AC7:AG8",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 2
+    },
+    {
+     "cell": "AM7",
+     "range": "AM7:AN8",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 3
+    },
+    {
+     "cell": "AT7",
+     "range": "AT7:AX8",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 3
+    },
+    {
+     "cell": "BD7",
+     "range": "BD7:BE8",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 4
+    },
+    {
+     "cell": "BK7",
+     "range": "BK7:BO8",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 4
+    },
+    {
+     "cell": "BU7",
+     "range": "BU7:BV8",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 5
+    },
+    {
+     "cell": "CB7",
+     "range": "CB7:CF8",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 5
+    },
+    {
+     "cell": "CL7",
+     "range": "CL7:CM8",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 6
+    },
+    {
+     "cell": "CS7",
+     "range": "CS7:CW8",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 6
+    },
+    {
+     "cell": "DC7",
+     "range": "DC7:DD8",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 7
+    },
+    {
+     "cell": "DJ7",
+     "range": "DJ7:DN8",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 7
+    },
+    {
+     "cell": "DT7",
+     "range": "DT7:DU8",
+     "label": "Mechanical properties shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 8
+    },
+    {
+     "cell": "EA7",
+     "range": "EA7:EE8",
+     "label": "Fire rating shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Performed own test",
+      "YES",
+      "NO"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 8
+    },
+    {
+     "cell": "E9",
+     "range": "E9:F10",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 1
+    },
+    {
+     "cell": "L9",
+     "range": "L9:P10",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "V9",
+     "range": "V9:W10",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 2
+    },
+    {
+     "cell": "AC9",
+     "range": "AC9:AG10",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AM9",
+     "range": "AM9:AN10",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 3
+    },
+    {
+     "cell": "AT9",
+     "range": "AT9:AX10",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "BD9",
+     "range": "BD9:BE10",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 4
+    },
+    {
+     "cell": "BK9",
+     "range": "BK9:BO10",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 4
+    },
+    {
+     "cell": "BU9",
+     "range": "BU9:BV10",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 5
+    },
+    {
+     "cell": "CB9",
+     "range": "CB9:CF10",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 5
+    },
+    {
+     "cell": "CL9",
+     "range": "CL9:CM10",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 6
+    },
+    {
+     "cell": "CS9",
+     "range": "CS9:CW10",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 6
+    },
+    {
+     "cell": "DC9",
+     "range": "DC9:DD10",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 7
+    },
+    {
+     "cell": "DJ9",
+     "range": "DJ9:DN10",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 7
+    },
+    {
+     "cell": "DT9",
+     "range": "DT9:DU10",
+     "label": "Mechanical properties at 60° shown?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "YES",
+      "NO",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "NO",
+     "block": 8
+    },
+    {
+     "cell": "EA9",
+     "range": "EA9:EE10",
+     "label": "Shear strength at 60°  [MPa]",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "MPa",
+     "default": null,
+     "block": 8
+    }
+   ],
+   "images": [
+    {
+     "id": "B14",
+     "anchor": "B14",
+     "label": "Pictures / CAD / calculations / explanations"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "EV5.5.10-12 Cell Fixation",
+   "title_he": "קיבוע תאים",
+   "fields": [
+    {
+     "cell": "M12",
+     "range": "M12:Q12",
+     "label": "Cell type",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Pouch",
+      "Cylindrical",
+      "Prismatic"
+     ],
+     "unit": null,
+     "default": "Pouch",
+     "block": 0
+    },
+    {
+     "cell": "M13",
+     "range": "M13:Q13",
+     "label": "Fixation method",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Adhesive",
+      "Friction based",
+      "Other"
+     ],
+     "unit": null,
+     "default": "Friction based",
+     "block": 0
+    },
+    {
+     "cell": "M14",
+     "range": "M14:Q14",
+     "label": "If other, specify:",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "M15",
+     "range": "M15:Q15",
+     "label": "Cell mass / g",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "g",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "M16",
+     "range": "M16:Q16",
+     "label": "Cell height (h) / mm",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "M17",
+     "range": "M17:Q17",
+     "label": "Cell width (w) / mm",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "mm",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "M20",
+     "range": "M20:Q20",
+     "label": "Max. number of cells between support (n)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "-",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "M22",
+     "range": "M22:Q22",
+     "label": "Compression force for friction based fixation (N)",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "N",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "M25",
+     "range": "M25:Q25",
+     "label": "Friction coefficent by testing",
+     "col_header": null,
+     "type": "number",
+     "options": null,
+     "unit": "-",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "M28",
+     "range": "M28:Q28",
+     "label": "Compressible materials (e. g. PCBs) in cell tab fixation stack-up?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    }
+   ],
+   "images": [
+    {
+     "id": "B6",
+     "anchor": "B7",
+     "label": "Insert pictures of your cell fastening methode showing the force path."
+    },
+    {
+     "id": "B31",
+     "anchor": "B32",
+     "label": "Insert pictures of fixation concept. Please show at least the following points:"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "EV5.5.9 Segment",
+   "title_he": "Segment",
+   "fields": [
+    {
+     "cell": "AF2",
+     "range": "AF2:AG2",
+     "label": "Any non-metallic materials used that are not continuous fiber reinforced laminates?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "AF6",
+     "range": "AF6:AG6",
+     "label": "Any bonded joints?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 0
+    }
+   ],
+   "images": [
+    {
+     "id": "B10",
+     "anchor": "B10",
+     "label": "Pictures / CAD / calculations / explanations"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "EV5.5.9 TSAC",
+   "title_he": "TSAC",
+   "fields": [
+    {
+     "cell": "AF2",
+     "range": "AF2:AG2",
+     "label": "Any non-metallic materials used that are not continuous fiber reinforced laminates?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "AF6",
+     "range": "AF6:AG6",
+     "label": "Any bonded joints?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 0
+    }
+   ],
+   "images": [
+    {
+     "id": "B10",
+     "anchor": "B10",
+     "label": "Pictures / CAD / calculations / explanations"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "EV5.5.9 TSAC attachments",
+   "title_he": "חיבורי TSAC לשלדה",
+   "fields": [
+    {
+     "cell": "AF2",
+     "range": "AF2:AG2",
+     "label": "Any non-metallic materials used that are not continuous fiber reinforced laminates?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "AF6",
+     "range": "AF6:AG6",
+     "label": "Any bonded joints?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 0
+    }
+   ],
+   "images": [
+    {
+     "id": "B10",
+     "anchor": "B10",
+     "label": "Pictures / CAD / calculations / explanations"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "EV5.5.13 Fasteners",
+   "title_he": "מחברים (Fasteners)",
+   "fields": [
+    {
+     "cell": "H11",
+     "range": "H11:I11",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y11",
+     "range": "Y11:Z11",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP11",
+     "range": "AP11:AQ11",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "H12",
+     "range": "H12:I12",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y12",
+     "range": "Y12:Z12",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP12",
+     "range": "AP12:AQ12",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "H13",
+     "range": "H13:Q13",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y13",
+     "range": "Y13:AH13",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP13",
+     "range": "AP13:AY13",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "H35",
+     "range": "H35:I35",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y35",
+     "range": "Y35:Z35",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP35",
+     "range": "AP35:AQ35",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "H36",
+     "range": "H36:I36",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y36",
+     "range": "Y36:Z36",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP36",
+     "range": "AP36:AQ36",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "H37",
+     "range": "H37:Q37",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y37",
+     "range": "Y37:AH37",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP37",
+     "range": "AP37:AY37",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "H59",
+     "range": "H59:I59",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y59",
+     "range": "Y59:Z59",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP59",
+     "range": "AP59:AQ59",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "H60",
+     "range": "H60:I60",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y60",
+     "range": "Y60:Z60",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP60",
+     "range": "AP60:AQ60",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "H61",
+     "range": "H61:Q61",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y61",
+     "range": "Y61:AH61",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP61",
+     "range": "AP61:AY61",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "H83",
+     "range": "H83:I83",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y83",
+     "range": "Y83:Z83",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP83",
+     "range": "AP83:AQ83",
+     "label": "Used for structural parts?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "H84",
+     "range": "H84:I84",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y84",
+     "range": "Y84:Z84",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP84",
+     "range": "AP84:AQ84",
+     "label": "Electrically conductive & inside TSAC?",
+     "col_header": null,
+     "type": "select",
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "unit": null,
+     "default": null,
+     "block": 3
+    },
+    {
+     "cell": "H85",
+     "range": "H85:Q85",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 1
+    },
+    {
+     "cell": "Y85",
+     "range": "Y85:AH85",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 2
+    },
+    {
+     "cell": "AP85",
+     "range": "AP85:AY85",
+     "label": "Positive Locking mechanism",
+     "col_header": null,
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 3
+    }
+   ],
+   "images": [
+    {
+     "id": "A14",
+     "anchor": "A15",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    },
+    {
+     "id": "R14",
+     "anchor": "R15",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    },
+    {
+     "id": "AI14",
+     "anchor": "AI15",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    },
+    {
+     "id": "A38",
+     "anchor": "A39",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    },
+    {
+     "id": "R38",
+     "anchor": "R39",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    },
+    {
+     "id": "AI38",
+     "anchor": "AI39",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    },
+    {
+     "id": "A62",
+     "anchor": "A63",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    },
+    {
+     "id": "R62",
+     "anchor": "R63",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    },
+    {
+     "id": "AI62",
+     "anchor": "AI63",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    },
+    {
+     "id": "A86",
+     "anchor": "A87",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    },
+    {
+     "id": "R86",
+     "anchor": "R87",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    },
+    {
+     "id": "AI86",
+     "anchor": "AI87",
+     "label": "Show (CAD) pictures of the fasteners and complementary explanations if necessary."
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "EV5.5.14-17 Openings&Separation",
+   "title_he": "פתחים והפרדות",
+   "fields": [
+    {
+     "cell": "E5",
+     "range": "E5:F5",
+     "label": "Segment 1",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G5",
+     "range": "G5:H5",
+     "label": "Segment 1",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I5",
+     "range": "I5:J5",
+     "label": "Segment 1",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K5",
+     "range": "K5:M5",
+     "label": "Segment 1",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E6",
+     "range": "E6:F6",
+     "label": "Segment 2",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G6",
+     "range": "G6:H6",
+     "label": "Segment 2",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I6",
+     "range": "I6:J6",
+     "label": "Segment 2",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K6",
+     "range": "K6:M6",
+     "label": "Segment 2",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E7",
+     "range": "E7:F7",
+     "label": "Segment 3",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G7",
+     "range": "G7:H7",
+     "label": "Segment 3",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I7",
+     "range": "I7:J7",
+     "label": "Segment 3",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K7",
+     "range": "K7:M7",
+     "label": "Segment 3",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E8",
+     "range": "E8:F8",
+     "label": "Segment 4",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G8",
+     "range": "G8:H8",
+     "label": "Segment 4",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I8",
+     "range": "I8:J8",
+     "label": "Segment 4",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K8",
+     "range": "K8:M8",
+     "label": "Segment 4",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E9",
+     "range": "E9:F9",
+     "label": "Segment 5",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G9",
+     "range": "G9:H9",
+     "label": "Segment 5",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I9",
+     "range": "I9:J9",
+     "label": "Segment 5",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K9",
+     "range": "K9:M9",
+     "label": "Segment 5",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E10",
+     "range": "E10:F10",
+     "label": "Segment 6",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G10",
+     "range": "G10:H10",
+     "label": "Segment 6",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I10",
+     "range": "I10:J10",
+     "label": "Segment 6",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K10",
+     "range": "K10:M10",
+     "label": "Segment 6",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E11",
+     "range": "E11:F11",
+     "label": "Segment 7",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G11",
+     "range": "G11:H11",
+     "label": "Segment 7",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I11",
+     "range": "I11:J11",
+     "label": "Segment 7",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K11",
+     "range": "K11:M11",
+     "label": "Segment 7",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E12",
+     "range": "E12:F12",
+     "label": "Segment 8",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G12",
+     "range": "G12:H12",
+     "label": "Segment 8",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I12",
+     "range": "I12:J12",
+     "label": "Segment 8",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K12",
+     "range": "K12:M12",
+     "label": "Segment 8",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E13",
+     "range": "E13:F13",
+     "label": "Segment 9",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G13",
+     "range": "G13:H13",
+     "label": "Segment 9",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I13",
+     "range": "I13:J13",
+     "label": "Segment 9",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K13",
+     "range": "K13:M13",
+     "label": "Segment 9",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E14",
+     "range": "E14:F14",
+     "label": "Segment 10",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G14",
+     "range": "G14:H14",
+     "label": "Segment 10",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I14",
+     "range": "I14:J14",
+     "label": "Segment 10",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K14",
+     "range": "K14:M14",
+     "label": "Segment 10",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E15",
+     "range": "E15:F15",
+     "label": "Segment 11",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G15",
+     "range": "G15:H15",
+     "label": "Segment 11",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I15",
+     "range": "I15:J15",
+     "label": "Segment 11",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K15",
+     "range": "K15:M15",
+     "label": "Segment 11",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E16",
+     "range": "E16:F16",
+     "label": "Segment 12",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G16",
+     "range": "G16:H16",
+     "label": "Segment 12",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I16",
+     "range": "I16:J16",
+     "label": "Segment 12",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K16",
+     "range": "K16:M16",
+     "label": "Segment 12",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E17",
+     "range": "E17:F17",
+     "label": "Segment 13",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G17",
+     "range": "G17:H17",
+     "label": "Segment 13",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I17",
+     "range": "I17:J17",
+     "label": "Segment 13",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K17",
+     "range": "K17:M17",
+     "label": "Segment 13",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E18",
+     "range": "E18:F18",
+     "label": "Segment 14",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G18",
+     "range": "G18:H18",
+     "label": "Segment 14",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I18",
+     "range": "I18:J18",
+     "label": "Segment 14",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K18",
+     "range": "K18:M18",
+     "label": "Segment 14",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E19",
+     "range": "E19:F19",
+     "label": "Segment 15",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G19",
+     "range": "G19:H19",
+     "label": "Segment 15",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I19",
+     "range": "I19:J19",
+     "label": "Segment 15",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K19",
+     "range": "K19:M19",
+     "label": "Segment 15",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "E20",
+     "range": "E20:F20",
+     "label": "Segment 16",
+     "col_header": "Mass\nkg",
+     "type": "number",
+     "options": null,
+     "unit": "kg",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "G20",
+     "range": "G20:H20",
+     "label": "Segment 16",
+     "col_header": "Voltage\nV",
+     "type": "number",
+     "options": null,
+     "unit": "V",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "I20",
+     "range": "I20:J20",
+     "label": "Segment 16",
+     "col_header": "Energy\nMJ",
+     "type": "number",
+     "options": null,
+     "unit": "MJ",
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "K20",
+     "range": "K20:M20",
+     "label": "Segment 16",
+     "col_header": "Separation shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "R24",
+     "range": "R24:S25",
+     "label": "Holes, both internal and external, in the TSAC, are only allowed for the wiring harness, ventilation, cooling, or fasteners.",
+     "col_header": "Compliance shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "R26",
+     "range": "R26:S26",
+     "label": "External holes must be sealed according to EV4.5.",
+     "col_header": "Compliance shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "R27",
+     "range": "R27:S27",
+     "label": "Total cutout area must be below 25 % of the area of the respective single wall.",
+     "col_header": "Compliance shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "R28",
+     "range": "R28:S28",
+     "label": "External openings in the TSAC or mounted ducts must not point toward the driver.",
+     "col_header": "Compliance shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "R29",
+     "range": "R29:S29",
+     "label": "External openings in the TSAC or mounted ducts must not point toward the handcart operator.",
+     "col_header": "Compliance shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "R30",
+     "range": "R30:S30",
+     "label": "Any ducts outside of the TSAC and their mountings are fire retardant.",
+     "col_header": "Compliance shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "R31",
+     "range": "R31:S32",
+     "label": "Is ventilation of explosive gases or a pressure relief valve required? If yes, then provide relevant description of the system.",
+     "col_header": "Compliance shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes",
+      "N/A"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    },
+    {
+     "cell": "R33",
+     "range": "R33:S33",
+     "label": "AIRs and main fuse must be separated (T1.2.1) from the TS accumulator.",
+     "col_header": "Compliance shown?",
+     "type": "select",
+     "options": [
+      "No",
+      "Yes"
+     ],
+     "unit": null,
+     "default": "No",
+     "block": 0
+    }
+   ],
+   "images": [
+    {
+     "id": "T5",
+     "anchor": "T5",
+     "label": "Pictures / CAD / calculations / explanations"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "Additional Info",
+   "title_he": "מידע נוסף",
+   "fields": [],
+   "images": [
+    {
+     "id": "B8",
+     "anchor": "B8",
+     "label": "Pictures / CAD / calculations / explanations"
+    }
+   ],
+   "notes": null
+  },
+  {
+   "name": "Version History",
+   "title_he": "היסטוריית גרסאות",
+   "fields": [
+    {
+     "cell": "A5",
+     "range": "A5",
+     "label": "#1",
+     "col_header": "Submission Version",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B5",
+     "range": "B5",
+     "label": "#1",
+     "col_header": "Revision Comments",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A6",
+     "range": "A6",
+     "label": "#2",
+     "col_header": "Submission Version",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B6",
+     "range": "B6",
+     "label": "#2",
+     "col_header": "Revision Comments",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A7",
+     "range": "A7",
+     "label": "#3",
+     "col_header": "Submission Version",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B7",
+     "range": "B7",
+     "label": "#3",
+     "col_header": "Revision Comments",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A8",
+     "range": "A8",
+     "label": "#4",
+     "col_header": "Submission Version",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B8",
+     "range": "B8",
+     "label": "#4",
+     "col_header": "Revision Comments",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A9",
+     "range": "A9",
+     "label": "#5",
+     "col_header": "Submission Version",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B9",
+     "range": "B9",
+     "label": "#5",
+     "col_header": "Revision Comments",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A10",
+     "range": "A10",
+     "label": "#6",
+     "col_header": "Submission Version",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B10",
+     "range": "B10",
+     "label": "#6",
+     "col_header": "Revision Comments",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A11",
+     "range": "A11",
+     "label": "#7",
+     "col_header": "Submission Version",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B11",
+     "range": "B11",
+     "label": "#7",
+     "col_header": "Revision Comments",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A12",
+     "range": "A12",
+     "label": "#8",
+     "col_header": "Submission Version",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B12",
+     "range": "B12",
+     "label": "#8",
+     "col_header": "Revision Comments",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A13",
+     "range": "A13",
+     "label": "#9",
+     "col_header": "Submission Version",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B13",
+     "range": "B13",
+     "label": "#9",
+     "col_header": "Revision Comments",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A14",
+     "range": "A14",
+     "label": "#10",
+     "col_header": "Submission Version",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B14",
+     "range": "B14",
+     "label": "#10",
+     "col_header": "Revision Comments",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    }
+   ],
+   "images": [],
+   "notes": null
+  },
+  {
+   "name": "Rules Clarifications",
+   "title_he": "הבהרות חוקים",
+   "fields": [
+    {
+     "cell": "A4",
+     "range": "A4",
+     "label": "#1",
+     "col_header": "Clarification ID",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B4",
+     "range": "B4",
+     "label": "#1",
+     "col_header": "Details of Clarification Question and Answer",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A5",
+     "range": "A5",
+     "label": "#2",
+     "col_header": "Clarification ID",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B5",
+     "range": "B5",
+     "label": "#2",
+     "col_header": "Details of Clarification Question and Answer",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A6",
+     "range": "A6",
+     "label": "#3",
+     "col_header": "Clarification ID",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B6",
+     "range": "B6",
+     "label": "#3",
+     "col_header": "Details of Clarification Question and Answer",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A7",
+     "range": "A7",
+     "label": "#4",
+     "col_header": "Clarification ID",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B7",
+     "range": "B7",
+     "label": "#4",
+     "col_header": "Details of Clarification Question and Answer",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A8",
+     "range": "A8",
+     "label": "#5",
+     "col_header": "Clarification ID",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B8",
+     "range": "B8",
+     "label": "#5",
+     "col_header": "Details of Clarification Question and Answer",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A9",
+     "range": "A9",
+     "label": "#6",
+     "col_header": "Clarification ID",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B9",
+     "range": "B9",
+     "label": "#6",
+     "col_header": "Details of Clarification Question and Answer",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A10",
+     "range": "A10",
+     "label": "#7",
+     "col_header": "Clarification ID",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B10",
+     "range": "B10",
+     "label": "#7",
+     "col_header": "Details of Clarification Question and Answer",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A11",
+     "range": "A11",
+     "label": "#8",
+     "col_header": "Clarification ID",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B11",
+     "range": "B11",
+     "label": "#8",
+     "col_header": "Details of Clarification Question and Answer",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A12",
+     "range": "A12",
+     "label": "#9",
+     "col_header": "Clarification ID",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B12",
+     "range": "B12",
+     "label": "#9",
+     "col_header": "Details of Clarification Question and Answer",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "A13",
+     "range": "A13",
+     "label": "#10",
+     "col_header": "Clarification ID",
+     "type": "text",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    },
+    {
+     "cell": "B13",
+     "range": "B13",
+     "label": "#10",
+     "col_header": "Details of Clarification Question and Answer",
+     "type": "textarea",
+     "options": null,
+     "unit": null,
+     "default": null,
+     "block": 0
+    }
+   ],
+   "images": [],
+   "notes": null
+  }
+ ],
+ "guidance": {
+  "Read_Me": "V1.0\nFS Accumulator Structural Equivalency Spreadsheet Guide\nThe ASES template has been created to simplify the process of proving structural equivalency of the Tractive System Accumulator (TSAC).\nPlease enter your values in the yellow cells and paste all the images in the specific tabs which shows your entered values.\nAll dimensions and units must follow the European SI System!\nThe final decision about all designs will be made at technical inspection. Approval of an ASES does not guarantee passing Tech. Inspection nor a fully rules compliant accumulator!\nAs downloaded, the spreadsheet assumes a baseline steel/aluminium TSAC design. The majority of the cells in the spreadsheet are locked, you can only edit the cells shaded yellow. \nCells shaded grey are dependant on the data entered in yellow cells, the formulae in these grey cells have been left visible so you can see how the results are calculated.\nThe vast majority of the tabs can be accessed using the hyperlinks on the cover sheet. If you enable macros when opening the document \"Ctrl+e\" will return you to the cover sheet.\nThe ASES has been extensively tested, but if you think you have found a mistake in the document or have any questions on how to use the template please submit a question in the usual manner.\nPlease read the guidance notes located at the end of the workbook.\nIf you find a new problem with the ASES template or require a clarification 72 hours or less before the ASES submission deadline please include your own proof of equivalency in the \"Additional Info\" tab and additionally submit a rules question.\nTeams are not permitted to rename the name of the TAB or to delete any TAB.\nRevisions:\nV1.0\nFirst release for 2026 rules\n- TAB EV5.5.10-12 Cell Fixation: Updated name and sheet due to new rules.\n- TAB EV5.5.14-18 Openings&Separation: Allowed N/A for some cases and removed\nredundant check.\n- TAB Datasheets Other Matl: Added cells for properties at 60 °C\n- TAB Materials Overview: Fixed formula error\n- TAB Materials Overview: Added cells for properties at 60 °C for Other Materials\n- TAB Accumulator Pics: Removed name before \"Material\" for correction.",
+  "T3.5.9 Guidance Notes": "PERIMETER SHEAR TEST GUIDANCE NOTES\nWhen entering peak loads please ensure they are in accordance with the image below:\nNote: Make sure to include BOTH peaks. Also, in case of assymetrical laminates.\nNote: If the first peak is higher than the second then it can be used for the punch through\nstrength requirement.\nBACK",
+  "EV5.5.3 Guidance Notes": " ACCUMULATOR MATERIALS GUIDANCE NOTES\nMaterials except metallic and continuous fiber-reinforced laminates\nMechanical properties must be valid for ≥ 60 °C !\nIn general 3 possibilities to show compliance:\n1. Values from Datasheet\n- Must explicitly show mechanical properties at or above 60 °C.\n- Glass transition/vicat temperature alone is not sufficient.\n2. Values from own tests\n- Test procedure shows mechanical properties ≥ 60 °C.\n- Must be well documented (report, pictures).\n3. Scientific justification\n- Least favourable.\n- Generous knock-down factor applied to ambient temperature values.\n- Backed up by known behavior of the explicit material, must be explained scientifically.\nBACK",
+  "EV5.5.9 Guidance Notes": "TSAC, STACK AND CELL FIXATION GUIDANCE NOTES\nAll mentioned parts and assembly mentioned in EV5.5.8, as well as the interface between\nmust withstand the mentioned accelerations.\nThis must be shown for every part/interface and every direction (x, y, z) in the respective\nASES tab.\nFor a quick review and pass, use the structure in the respective tab. This will help the \nreviewer to quickly understand your design and calculations.\nPlease note:\nAnalytical calculations always required, FEM can be supportive\nShowing some flashy and colourfull FEM images without legends, full model description or \nunreadable numbers, no information on meshing etc. result in a \"FAIL\" directly.\nAnalytical calculations must at least be used to verify the FEM calculations.\nBACK: Cell fixation\nBACK: Segment\nBACK: TSAC",
+  "EV5.5.10-11 Guidance Notes": "CELL FIXATION GUIDANCE NOTES\nPouch cells must be fixed using one or both of the large \nsurface(s) only.\nLarge surface means only the surface shown in the picture on the right.\nThis may be done by friction or adhesive.\nThe other surfaces of the cell must not carry any major load. However,\ntouching other surfaces for packaging reasons is acceptable.\nEach used surface must be fixed on at least 80 %.\n80 % is the absolute minimum surface to be used. If possible, use more\nto distribute the force more evenly and improve safety.\nTabs of pouch cells must not carry mechanical loads and must not \npress into the pouch.\nAbsolutely no mechanical load is permitted on the cell tabs. Busbars, \nPCB and/or other parts that are connected with the cell tabs must have \na separate mounting from the cell tabs.\nTo be able to fulfill EV5.5.11, the number of cells mechanically attached in series\nis limited.\nThe number of cells in series can be determined based on the following explanation:\nIf cells are supported on both sides, i.e. between\nsupports, the number of cells mechanically in \nseries is the number of cells between the supports\ndivided by 2.\n(Left image)\nIf cells are supported from one side only, the\noverall number of cells attached to that support\nshall be considered the cells mechanically in series.\n(Right image)\nBACK",
+  "EV5.5.12 Guidance Notes": "FRICTION-BASED CELL FIXATION GUIDANCE NOTES\nFor friction based cell fixation, i.e. using a preload force to clamp the cells, testing is\nrequired to determine the coefficient of friction between the cells and the material\nthey are attached to.\nA suggestion for a test setup is shown below.\nCell or mockup\nFor the test, you can use a an actual cell (respecting all necessary safety measures) \nor a representative cell mockup.\nIf a mockup is used, it must have respresentative size (area of friction), surface condition,\nand stiffness as the actual cell. Pouch cell foil may be available at the manufacturer.\nTesting Pressure\nThe coefficient of friction may be non-linear towards the application pressure. This\nmust be respected in the testing and calculation.\nHowever, the actual pressure in the stack may be inappropriate/too high for the test.\nConduct tests with different testing pressure values and then extrapolate in the \ncalculation to your real application pressure.\nTesting procedure and documentation\nFor each testing pressure, also conduct multiple tests to exclude random influences.\nDocument every test result in the EV5.5.10-12 Cell Fixation tab in a table.\nShow pictures of and describe your test setup. Briefly summarize your test and\nargue, which coefficient of friction was chosen.\nBACK",
+  "EV5.5 TSAC Attachment Guidance": "ACCUMULATOR CONTAINER ATTACHMENT GUIDANCE NOTES\nPlease note:\nAnalytical calculations always preferred\n!\nShowing some flashy and colourful FEM images without legends, full model description or lettertypes are unreadable, nothing given about the meshing etc. result in a \"FAIL\" directly.\n!\nBACK"
+ }
+}

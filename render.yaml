@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: biu-ases
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 1 -b 0.0.0.0:$PORT server:app
+    envVars:
+      - key: ACCESS_CODE
+        sync: false
+# For persistence: plan starter + disk {name: data, mountPath: /var/data, sizeGB: 1} and envVar DATA_DIR=/var/data
