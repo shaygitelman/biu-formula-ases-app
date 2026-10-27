@@ -209,7 +209,12 @@ def check(tid, name): sheet_of(tid, name); return jsonify(findings(tid, name)[0]
 def chat(tid):
     j = request.json; name = j["sheet"]; s = sheet_of(tid, name); f, vals = findings(tid, name)
     guid = "\n".join(tpl(tid)["fm"]["guidance"].get(k, "") for k in s.get("guidance", []) + ["Read_Me"])
-    sr = with_req(tid, s); fld = next((x for x in sr.get("fields", []) if x.get("cell") == j.get("field")), None) if j.get("field") else None
+    sr = with_req(tid, s); fid = j.get("field"); fld = None
+    if fid:
+        fld = next((x for x in sr.get("fields", []) if x.get("cell") == fid), None)
+        if not fld:  # picture slot or table
+            o = next((x for x in sr.get("images", []) if x.get("id") == fid), None) or next((x for x in s.get("tables", []) if "T:" + str(x.get("id")) == fid), None)
+            if o: fld = {**o, "cell": fid, "range": fid}
     return jsonify({"answer": checks.assistant(sr, j["message"], vals, [x for x in f if x["level"] != "rule"], guid, j.get("history"), rules_ctx(tid, name), fld), "llm": bool(checks.llm_config())})
 
 # ---------- export ----------
