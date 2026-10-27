@@ -97,10 +97,33 @@ footer #nxe{border-color:transparent;background:none;color:var(--mut)}footer #nx
 .list .row{border-top:0;padding:10px 0}
 .cl li{color:#4a5263}
 .natag{background:#f1f2f5}
-@media (max-width:820px){main{padding:24px 16px 130px}.card{padding:22px 18px}nav{background:#fff}}</style></head><body>
+@media (max-width:820px){main{padding:24px 16px 130px}.card{padding:22px 18px}nav{background:#fff}}
+/* v10 */
+.tp{height:3px;border-radius:3px;background:var(--line);margin:0 0 30px;overflow:hidden}.tp i{display:block;height:100%;background:var(--ok);opacity:.75;transition:width .4s}
+.tpl{font-size:12px;color:var(--mut)}
+nav .ck{margin-left:auto;color:var(--ok);font-size:12px}nav .ow+.ck{margin-left:6px}
+.save{transition:opacity .6s}.save.idle{opacity:0}.save .ckm{color:var(--ok)}
+.toast{display:none;align-items:center;gap:12px}.toast.on{display:flex}.toast button{border:0;background:none;color:inherit;font-weight:600;text-decoration:underline;cursor:pointer;padding:0}
+.tb.pend{opacity:.5}.tb.pend:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fff0,#fff6,#fff0);animation:sh 1s infinite}@keyframes sh{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.ed{white-space:normal;min-width:min(760px,90vw)}.ed h2{margin:0 0 4px;font-size:17px}.ed .cv{position:relative;display:inline-block;margin:12px 0;cursor:crosshair;user-select:none;touch-action:none}.ed canvas{display:block;max-width:100%}.ed .sel{position:absolute;border:2px solid #fff;box-shadow:0 0 0 9999px #0007;pointer-events:none}
+.ed .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.ed select{border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--card)}
+.thm{font-size:15px;width:34px;padding:7px 0}
+html.dark{color-scheme:dark;--bg:#15171b;--card:#1d2026;--line:#2c3038;--txt:#e7e9ee;--mut:#9da4b2;--acc:#f07a6c;--ok:#4ade80;--warn:#fbbf24;--err:#f87171;--na:#6b7280}
+html.dark header,html.dark .modal .box{background:var(--card)}html.dark footer{background:#1d2026f2;border-top-color:var(--line)}html.dark header{border-bottom-color:var(--line)}
+html.dark nav .it{color:#c3c8d2}html.dark nav .it.on{background:var(--card);box-shadow:none}html.dark nav .it:hover,html.dark .btn:hover,html.dark .btn.ghost:hover,html.dark .dd button:hover,html.dark .step:hover,html.dark footer #nxe:hover{background:#282c34}
+html.dark .card{box-shadow:0 0 0 1px var(--line)}html.dark .f label,html.dark .grid td:first-child,html.dark .cl li,html.dark .req li,html.dark .why,html.dark .infobox{color:#d3d7df}
+html.dark input.x,html.dark select.x,html.dark textarea.x,html.dark .tblta,html.dark .chatf input,html.dark .dd input[type=text],html.dark .sug button{background:#15171b;border-color:#363b45;color:var(--txt)}html.dark .x:hover{border-color:#4a505c}html.dark .x:focus{border-color:#7c8496;box-shadow:0 0 0 3px #ffffff14}
+html.dark .f:focus-within{background:#22262d}html.dark .infobox,html.dark .fh{background:#252930;color:#cfd3db}html.dark .step.on,html.dark .info.on,html.dark .hl:hover,html.dark .hl.on,html.dark .tabs2 button.on,html.dark .m.u,html.dark .natag,html.dark .req .src{background:#2c3038;color:var(--txt)}
+html.dark .info,html.dark .hl,html.dark .btn,html.dark .own,html.dark .drop{border-color:#3a3f49}html.dark .drop:hover,html.dark .drop.over,html.dark .fd[data-cell]:hover{background:#22262d}
+html.dark .btn.pri,html.dark .fab{background:#e7e9ee;color:#15171b;border-color:#e7e9ee}html.dark .btn.pri:hover{background:#fff}html.dark .fab kbd{color:#15171b}
+html.dark .rq{color:#ff8a80}html.dark .rv b{background:#f87171;color:#15171b}html.dark .bar{background:#2c3038}html.dark .bar i{background:#aeb4c0}html.dark .dot{background:#4a505c}html.dark .dot.p{background:var(--warn)}html.dark .dot.d{background:var(--ok)}html.dark .dot.e{background:var(--err)}html.dark .dot.n{background:var(--na)}
+html.dark .toast{background:#e7e9ee;color:#15171b}html.dark .fd{border-left-color:#3a3f49}html.dark .fd.error{border-color:var(--err)}html.dark .fd.warn{border-color:var(--warn)}html.dark .fd.ok{border-color:var(--ok)}
+html.dark .hl.ask,html.dark .fh .cellref .hl,html.dark .rl{color:#8fb3ff}html.dark a{color:var(--acc)}html.dark .tb{border-color:var(--line)}html.dark .drawer{box-shadow:-12px 0 40px #0006}html.dark kbd{border-color:#3a3f49}
+html.dark .dd{box-shadow:0 12px 32px #0008}html.dark .modal{background:#000a}html.dark .he{color:#8a91a0}html.dark .grid td{border-color:var(--line)}
+</style></head><body>
 <header><button class="btn ghost burger" aria-label="Menu" onclick="nav.classList.toggle('on')">☰</button><div class="brand"><i></i>BIU Formula <span>· ASES 2026/27</span></div><div class="grow"></div>
 <button class="btn pri" onclick="doExport()">Export<span class="hm"> .xlsm</span></button>
-<div class="menu" id="menu"><button class="btn ghost" onclick="menu.classList.toggle('open')" title="More" aria-label="More actions">⋯</button><div class="dd">
+<button class="btn ghost thm" id="thm" onclick="toggleTheme()" title="Toggle dark mode" aria-label="Toggle dark mode">☾</button><div class="menu" id="menu"><button class="btn ghost" onclick="menu.classList.toggle('open')" title="More" aria-label="More actions">⋯</button><div class="dd">
 <div style="padding:6px 10px"><small class="mut">Your name (for the change log)</small><input type="text" id="who" placeholder="e.g. Shai"></div><hr>
 <button onclick="onboard()">How this app works<small>The 3-step intro</small></button><hr>
 <button onclick="location=A('/backup')">Download backup<small>JSON with all values, notes and pictures</small></button>
@@ -112,18 +135,26 @@ footer #nxe{border-color:transparent;background:none;color:var(--mut)}footer #nx
 <button class="btn ghost rv" id="rvb" onclick="openDrawer('check')">Review<b id="rvn" style="display:none"></b></button><button class="btn" id="nxe" onclick="nextEmpty()" title="Jump to the next empty field (Alt+N)">Next empty<span class="hm"> <kbd>Alt+N</kbd></span></button><button class="btn pri" id="next">Next →</button></footer>
 <div class="drawer" id="drawer"><div class="dh"><div class="tabs2"><button id="t-check" onclick="openDrawer('check')">Review</button><button id="t-ask" onclick="openDrawer('ask')">Assistant</button></div><div class="grow"></div><button class="btn ghost" onclick="drawer.classList.remove('on')">✕</button></div>
 <div class="dbody" id="dbody"></div><div class="ctx" id="ctx" style="display:none"></div><form class="chatf" id="chatf" onsubmit="ask(event)" style="display:none"><input id="q" placeholder="Ask about this tab or field, e.g. EV5.5.14"><button class="btn pri">Ask</button></form></div><button class="fab" id="fab" onclick="openAsk()" title="Ask the assistant (/ or Alt+A)" aria-label="Ask the assistant">Ask</button>
-<div class="modal" id="modal" role="dialog" aria-modal="true" onclick="if(event.target===this)this.classList.remove('on')"><div class="box" id="mbox"></div></div><div class="toast" id="toast"></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" onclick="if(event.target===this)closeModal()"><div class="box" id="mbox"></div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
+{const t=localStorage.theme;if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}
+function toggleTheme(){const d=document.documentElement.classList.toggle('dark');localStorage.theme=d?'dark':'light';$('#thm').textContent=d?'☀':'☾'}
 {const rc=Element.prototype.replaceChildren;Element.prototype.replaceChildren=function(...k){return rc.apply(this,k.flat(Infinity).filter(x=>x!=null&&x!==false))}}
 const TID=new URLSearchParams(location.search).get('t')||'ases',A=p=>`/api/${TID}${p}`,$=s=>document.querySelector(s);
 const E=(t,a={},...k)=>{const e=document.createElement(t);for(const[x,y]of Object.entries(a)){if(x.startsWith('on'))e[x]=y;else if(y!==false&&y!=null)e.setAttribute(x,y===true?'':y)}k.flat(Infinity).forEach(c=>c!=null&&c!==false&&e.append(c.nodeType?c:document.createTextNode(c)));return e};
 let FM,PROG={},CUR='__overview',SEC=0,ST=null,pending=0,hist=[],FIND=[],DTAB='check',ACTX=null;
 const nav=$('#nav'),menu=$('#menu'),drawer=$('#drawer'),who=$('#who');who.value=localStorage.who||'';who.onchange=()=>localStorage.who=who.value;
 document.addEventListener('click',e=>{if(!menu.contains(e.target))menu.classList.remove('open')});
-const toast=(m,ms=3500)=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('on'),ms)};
-const modal=n=>{$('#mbox').replaceChildren(n);$('#modal').classList.add('on');setTimeout(()=>$('#mbox').querySelector('button')?.focus(),50)};document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('#modal').classList.remove('on');drawer.classList.remove('on')}});
+const toast=(m,ms=3500,act)=>{const t=$('#toast');t.replaceChildren(E('span',{},m),act?E('button',{type:'button',onclick:()=>{t.classList.remove('on');act[1]()}},act[0]):null);t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('on'),ms)};
+const closeModal=()=>{$('#modal').classList.remove('on');const f=window._mcancel;window._mcancel=null;f&&f()};
+const modal=n=>{$('#mbox').replaceChildren(n);$('#modal').classList.add('on');setTimeout(()=>$('#mbox').querySelector('button')?.focus(),50)};document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();drawer.classList.remove('on')}});
 const debounce=(f,ms)=>{let h;return(...a)=>{clearTimeout(h);h=setTimeout(()=>f(...a),ms)}};
-function saving(d){pending+=d;$('#save').className='save'+(pending>0?' busy':'');$('#savet').textContent=pending>0?'Saving…':'Saved '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',hourCycle:'h23'})}
+function saving(d){pending+=d;const sv=$('#save');clearTimeout(sv._h);sv.className='save'+(pending>0?' busy':'');sv.title=pending>0?'':'Last saved '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+ if(pending>0)$('#savet').textContent='Saving…';else{$('#savet').replaceChildren('Saved ',E('span',{class:'ckm'},'✓'));sv._h=setTimeout(()=>sv.classList.add('idle'),2200)}}
+let UNDO=[];function pushUndo(label,fn,toastIt){UNDO.push({label,fn});if(UNDO.length>40)UNDO.shift();if(toastIt)toast(label,6000,['Undo',undo])}
+async function undo(){const u=UNDO.pop();if(!u)return toast('Nothing to undo');try{await u.fn();toast('Undone: '+u.label.replace(/^./,c=>c.toLowerCase()))}catch(e){toast('Undo failed: '+e.message)}}
+async function setVal(sheet,cell,v){saving(1);try{const r=await post('/value',{sheet,cell,value:v,user:who.value});PROG[sheet]=r.progress;if(sheet===CUR&&ST){ST.values[cell]=v;const el=document.getElementById('c-'+cell);if(el){el.value=v;}refreshProg()}drawNavSoft();checkSoon()}catch(e){bad(e)}saving(-1)}
+document.addEventListener('keydown',e=>{const tg=e.target,typing=tg&&(tg.tagName==='INPUT'||tg.tagName==='TEXTAREA'||tg.isContentEditable);if((e.ctrlKey||e.metaKey)&&!e.shiftKey&&(e.key==='z'||e.key==='Z')&&!typing){e.preventDefault();undo()}});
 function bad(e){$('#save').className='save bad';$('#savet').textContent='Not saved';toast('Save failed: '+e.message)}
 async function api(p,o={}){const r=await fetch(A(p),o);let j={};try{j=await r.json()}catch(e){}if(!r.ok)throw new Error(j.error||r.statusText);return j}
 const post=(p,b)=>api(p,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});
@@ -151,8 +182,9 @@ async function nextEmpty(){if(!FM)return;let si=FM.sheets.findIndex(x=>x.name===
  toast('No empty required fields left 🎉')}
 document.addEventListener('keydown',e=>{if(e.altKey&&(e.key==='n'||e.key==='N'||e.code==='KeyN')){e.preventDefault();nextEmpty()}});
 async function init(){FM=await api('/fieldmap');PROG=await api('/progress');route()}
-function drawNav(){nav.replaceChildren(it('__overview','Overview'),E('div',{class:'sep'}),FM.sheets.map(s=>it(s.name,short(s.name),PROG[s.name])))}
-function it(id,label,p){return E('div',{class:'it'+(CUR===id?' on':''),title:id,onclick:()=>{go(id);nav.classList.remove('on')}},p!==undefined?E('i',{class:'dot '+status(p)}):E('i',{class:'dot',style:'background:var(--txt)'}),label,p&&p.owner?E('span',{class:'ow',title:'Owner: '+p.owner},initials(p.owner)):null)}
+function drawNav(){setTimeout(updTP);nav.replaceChildren(it('__overview','Overview'),E('div',{class:'sep'}),FM.sheets.map(s=>it(s.name,short(s.name),PROG[s.name])))}
+function it(id,label,p){return E('div',{class:'it'+(CUR===id?' on':''),title:id,onclick:()=>{go(id);nav.classList.remove('on')}},p!==undefined?E('i',{class:'dot '+status(p)}):E('i',{class:'dot',style:'background:var(--txt)'}),label,p&&p.owner?E('span',{class:'ow',title:'Owner: '+p.owner},initials(p.owner)):null,p&&!p.na&&!p.optional&&p.pct>=100?E('span',{class:'ck',title:'All required fields complete','aria-label':'complete'},'✓'):null)}
+function updTP(){const b=$('#tpb'),p=PROG[CUR];if(!b||!p)return;const v=p.na?100:Math.min(100,p.pct||0);b.style.width=v+'%';b.parentNode.title=`${p.done} of ${p.total} required items`;const l=$('#tpl');if(l)l.textContent=p.na?'· not applicable':`· ${p.done}/${p.total} done`}
 const initials=n=>n.split(/\s+/).filter(Boolean).map(w=>w[0].toUpperCase()).slice(0,2).join('');
 function go(id,sec=0){SEC=sec;location.hash=encodeURIComponent(id)+(sec?'/'+sec:'')}
 window.onhashchange=route;
@@ -181,7 +213,7 @@ async function openSheet(){const s=FM.sheets.find(x=>x.name===CUR);ST=await api(
    sk?null:needList(s,sec),
    sk?E('button',{class:'btn',onclick:()=>setSkip(sec.id,false)},'Mark as used'):renderItems(s,sec),
    !sk&&SEC===secs.length-1?notesBox(s):null));
- $('#main').replaceChildren(E('div',{class:'wrap'},E('div',{class:'th'},E('h1',{},s.title||CUR),ibtn),heOf(CUR)?E('div',{class:'he',dir:'rtl',lang:'he'},heOf(CUR)):null,E('div',{class:'meta'},'Owner',ownerIn(s),(s.fields||[]).some(f=>f.required===true)?E('span',{},'· ',E('span',{class:'rq',style:'margin:0'},'*'),' required'):null),ib,body));$('#main').scrollTop=0;
+ $('#main').replaceChildren(E('div',{class:'wrap'},E('div',{class:'tp',role:'progressbar','aria-label':'Tab progress'},E('i',{id:'tpb'})),E('div',{class:'th'},E('h1',{},s.title||CUR),ibtn),heOf(CUR)?E('div',{class:'he',dir:'rtl',lang:'he'},heOf(CUR)):null,E('div',{class:'meta'},'Owner',ownerIn(s),(s.fields||[]).some(f=>f.required===true)?E('span',{},'· ',E('span',{class:'rq',style:'margin:0'},'*'),' required'):null,E('span',{class:'tpl',id:'tpl'})),ib,body));$('#main').scrollTop=0;
  $('#tabopts').replaceChildren(E('hr'),E('label',{},E('input',{type:'checkbox',checked:sk,disabled:na,onchange:e=>setSkip(sec.id,e.target.checked)}),'This section is not used'),E('label',{},E('input',{type:'checkbox',checked:na,onchange:e=>setSkip('*',e.target.checked)}),'Whole tab not applicable'));
  const nxt=SEC<secs.length-1&&!na?()=>go(CUR,SEC+1):si<FM.sheets.length-1?()=>go(FM.sheets[si+1].name):()=>go('__overview');
  const prv=SEC>0&&!na?()=>go(CUR,SEC-1):si>0?()=>go(FM.sheets[si-1].name,FM.sheets[si-1].sections.length-1):()=>go('__overview');
@@ -225,6 +257,7 @@ function input(s,f,compact){const v=ST.values[f.cell]??'';let inp;
  const chk=()=>{const x=inp.value.trim();let h='';const nv=+x.replace(',','.');if(x&&f.type==='number'&&isNaN(nv))h='Enter a number'+(f.unit?' in '+f.unit:'')+' (e.g. 2.5)';
   let w='';const rg=RANGE[f.unit];if(x&&f.type==='number'&&!h&&rg&&(nv<rg[0]||nv>rg[1]))w=`Unusual value for ${f.unit} – please double-check.`;if(!compact)wh.textContent=w;if(x&&f.type==='email'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(x))h='Enter a valid email';hint.textContent=compact?'':h;inp.classList.toggle('bad',!!h);if(compact)inp.title=h||inp.title};
  const save=async()=>{saving(1);try{const r=await post('/value',{sheet:s.name,cell:f.cell,value:inp.value,user:who.value});ST.values[f.cell]=inp.value;refreshProg();PROG[s.name]=r.progress;if(r.hint){inp.classList.add('bad');if(!compact)hint.textContent=r.hint}drawNavSoft();checkSoon()}catch(e){bad(e)}saving(-1)};
+ let before=v;inp.addEventListener('focus',()=>before=ST.values[f.cell]??'');inp.addEventListener('change',()=>{const old=before,sh=s.name;before=inp.value;if(old!==inp.value)pushUndo('Changed “'+(f.label.length>40?f.label.slice(0,40)+'…':f.label)+'”',()=>setVal(sh,f.cell,old))});
  const ds=debounce(save,600);if(f.type==='select')inp.onchange=save;else inp.oninput=()=>{chk();ds()};if(v)setTimeout(chk);
  const box=f.type==='number'&&f.unit&&!compact?E('div',{class:'nu'},inp,E('span',{},f.unit)):inp;return compact?inp:E('div',{},box,hint,wh)}
 function field(s,f){if(!f)return null;const sec=FM.sheets.find(x=>x.name===s.name).sections.find(x=>x.id===f.section),lab=niceLabel(f.label,sec?.title,f.unit);const help=f.help?E('div',{class:'fh',style:'display:none'},f.help):null;
@@ -233,11 +266,31 @@ function field(s,f){if(!f)return null;const sec=FM.sheets.find(x=>x.name===s.nam
 function hl(h){return E('button',{class:'hl',type:'button',title:'How to fill','aria-label':'How to fill','aria-expanded':'false',onclick:e=>{const o=h.style.display==='none';h.style.display=o?'block':'none';e.currentTarget.classList.toggle('on',o);e.currentTarget.setAttribute('aria-expanded',o)}},'?')}
 function askLink(id,label){return E('button',{class:'hl ask',type:'button',style:'margin:0',onclick:()=>openAsk({cell:id,label})},'Ask about this field')}
 function askBtn(id,label){return E('button',{class:'hl',type:'button',title:'Ask about this field','aria-label':'Ask about this field',onclick:()=>openAsk({cell:id,label})},'?')}
+function editImage(file){return new Promise(res=>{const img=new Image(),url=URL.createObjectURL(file);img.onerror=()=>res(file);img.onload=()=>{
+ const W=img.naturalWidth,H=img.naturalHeight,k=Math.min(1,720/W,(innerHeight*.5)/H),cv=E('canvas',{width:Math.round(W*k),height:Math.round(H*k)});cv.getContext('2d').drawImage(img,0,0,cv.width,cv.height);
+ let sel=null,st=null;const sb=E('div',{class:'sel',style:'display:none'}),wrap=E('div',{class:'cv'},cv,sb),info=E('span',{class:'mut small'});
+ const sz=E('select',{'aria-label':'Resize'},E('option',{value:0},'Original size'),[3000,2000,1600,1200,800].map(n=>E('option',{value:n},'Max '+n+' px')));sz.value=Math.max(W,H)>2000?2000:0;
+ const upd=()=>{const r=sel||{x:0,y:0,w:cv.width,h:cv.height};sb.style.display=sel?'block':'none';if(sel)Object.assign(sb.style,{left:r.x+'px',top:r.y+'px',width:r.w+'px',height:r.h+'px'});let w=r.w/k,h=r.h/k;const m=+sz.value,f=m&&Math.max(w,h)>m?m/Math.max(w,h):1;info.textContent=`${Math.round(w*f)} × ${Math.round(h*f)} px`+(sel?' · cropped':'')};
+ const pt=e=>{const b=cv.getBoundingClientRect(),sx=cv.width/b.width;return[Math.max(0,Math.min(cv.width,(e.clientX-b.left)*sx)),Math.max(0,Math.min(cv.height,(e.clientY-b.top)*sx))]};
+ wrap.onpointerdown=e=>{st=pt(e);wrap.setPointerCapture(e.pointerId)};wrap.onpointermove=e=>{if(!st)return;const[x,y]=pt(e),b=cv.getBoundingClientRect(),q=b.width/cv.width;sel={x:Math.min(x,st[0])*q,y:Math.min(y,st[1])*q,w:Math.abs(x-st[0])*q,h:Math.abs(y-st[1])*q,_q:q};upd()};
+ wrap.onpointerup=()=>{st=null;if(sel&&(sel.w<8||sel.h<8))sel=null;upd()};sz.onchange=upd;
+ const done=v=>{window._mcancel=null;$('#modal').classList.remove('on');URL.revokeObjectURL(url);res(v)};
+ const save=()=>{const q=sel?sel._q:1,r=sel?{x:sel.x/q/k,y:sel.y/q/k,w:sel.w/q/k,h:sel.h/q/k}:{x:0,y:0,w:W,h:H};const m=+sz.value,f=m&&Math.max(r.w,r.h)>m?m/Math.max(r.w,r.h):1;
+  if(!sel&&f===1)return done(file);const o=E('canvas',{width:Math.round(r.w*f),height:Math.round(r.h*f)});o.getContext('2d').drawImage(img,r.x,r.y,r.w,r.h,0,0,o.width,o.height);
+  const jp=/jpe?g/i.test(file.type)||/\.jpe?g$/i.test(file.name);o.toBlob(b=>done(b?new File([b],(file.name||'pasted.png').replace(/\.\w+$/,'')+(jp?'.jpg':'.png'),{type:b.type}):file),jp?'image/jpeg':'image/png',.9)};
+ modal(E('div',{class:'ed'},E('h2',{},'Adjust picture'),E('div',{class:'mut small'},'Drag on the picture to crop. Optional – you can save it as it is.'),wrap,E('div',{class:'row'},sz,info,E('div',{class:'grow'}),E('button',{class:'btn ghost',onclick:()=>{sel=null;upd()}},'Reset'),E('button',{class:'btn',onclick:()=>done(null)},'Cancel'),E('button',{class:'btn pri',onclick:save},'Save picture'))));
+ window._mcancel=()=>{URL.revokeObjectURL(url);res(null)};upd();setTimeout(()=>$('#mbox').querySelector('.btn.pri')?.focus(),60)};img.src=url})}
 function imageSlot(s,im){if(!im)return null;const th=E('div',{class:'thumbs'}),inp=E('input',{type:'file',accept:'image/*',multiple:true,style:'display:none'});
- const draw=()=>th.replaceChildren(ST.images.filter(x=>x.slot===im.id).map(x=>E('div',{class:'tb',title:x.name},E('img',{src:A(`/image/${x.id}?thumb=1`),loading:'lazy',onclick:()=>modal(E('img',{src:A('/image/'+x.id)}))}),E('button',{title:'Remove',onclick:async()=>{if(!confirm('Remove this picture?'))return;await api('/image/'+x.id,{method:'DELETE'});ST.images=ST.images.filter(y=>y.id!==x.id);draw();afterChange(s)}},'×'))));
+ const draw=()=>th.replaceChildren(ST.images.filter(x=>x.slot===im.id).map(x=>E('div',{class:'tb',title:x.name},E('img',{src:A(`/image/${x.id}?thumb=1`),loading:'lazy',onclick:()=>modal(E('img',{src:A('/image/'+x.id)}))}),E('button',{title:'Remove','aria-label':'Remove picture',onclick:async()=>{if(!confirm('Remove this picture?'))return;let blob=null;try{blob=await (await fetch(A('/image/'+x.id))).blob()}catch(e){}await api('/image/'+x.id,{method:'DELETE'});ST.images=ST.images.filter(y=>y.id!==x.id);draw();afterChange(s);
+   if(blob)pushUndo('Picture removed',async()=>{const fd=new FormData();fd.append('sheet',s.name);fd.append('slot',im.id);fd.append('user',who.value);fd.append('file',new File([blob],x.name||'picture.png',{type:blob.type}));await api('/image',{method:'POST',body:fd});if(CUR===s.name){ST=await api('/sheet/'+encodeURIComponent(s.name));draw();afterChange(s)}},true)}},'×'))));
  const up=async files=>{files=[...files].filter(f=>/\.(png|jpe?g|gif|bmp|webp)$/i.test(f.name)||/^image\//.test(f.type));if(!files.length)return toast('Only image files (png, jpg, gif, bmp, webp)');
+  if(files.length===1){const ed=await editImage(files[0]);if(!ed)return;files=[ed]}
+  const tmp=files.map(f=>E('div',{class:'tb pend',title:'Uploading '+f.name},E('img',{src:URL.createObjectURL(f)})));th.append(...tmp);
   const fd=new FormData();fd.append('sheet',s.name);fd.append('slot',im.id);fd.append('user',who.value);files.forEach(f=>fd.append('file',f,f.name||'pasted.png'));saving(1);
-  try{await api('/image',{method:'POST',body:fd});ST=await api('/sheet/'+encodeURIComponent(s.name));draw();afterChange(s)}catch(e){bad(e)}saving(-1)};
+  const had=new Set(ST.images.map(x=>x.id));
+  try{await api('/image',{method:'POST',body:fd});ST=await api('/sheet/'+encodeURIComponent(s.name));draw();afterChange(s);const ids=ST.images.filter(x=>!had.has(x.id)).map(x=>x.id);
+   pushUndo(ids.length>1?ids.length+' pictures added':'Picture added',async()=>{for(const i of ids)await api('/image/'+i,{method:'DELETE'});if(CUR===s.name){ST.images=ST.images.filter(y=>!ids.includes(y.id));draw();afterChange(s)}},true)}catch(e){tmp.forEach(x=>x.remove());bad(e)}saving(-1)};
+
  inp.onchange=()=>up(inp.files);const d=E('div',{class:'drop',id:'c-'+im.id,role:'button',tabindex:0,onkeydown:e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();inp.click()}},onclick:()=>inp.click()},'Drop pictures here, paste, or click to choose',inp);
  d.ondragover=e=>{e.preventDefault();d.classList.add('over')};d.ondragleave=()=>d.classList.remove('over');d.ondrop=e=>{e.preventDefault();d.classList.remove('over');up(e.dataTransfer.files)};d.onpaste=e=>{const f=[...e.clipboardData.files];if(f.length){e.preventDefault();up(f)}};
  const help=im.help?E('div',{class:'fh',style:'display:none'},im.help,E('span',{class:'cellref'},askLink(im.id,im.label))):null;draw();
@@ -279,7 +332,7 @@ document.addEventListener('keydown',e=>{const tg=e.target,typing=tg&&(tg.tagName
  if((e.altKey&&(e.code==='KeyA'||e.key==='a'||e.key==='A'))||(e.key==='/'&&!typing&&!e.ctrlKey&&!e.metaKey)){e.preventDefault();openAsk()}});
 function pick(acc,fn){const i=E('input',{type:'file',accept:acc});i.onchange=()=>i.files[0]&&fn(i.files[0]);i.click()}
 async function restore(f){if(!confirm('Restore will replace all current data with the backup. Continue?'))return;const fd=new FormData();fd.append('file',f);try{const r=await api('/restore',{method:'POST',body:fd});toast(`Restored ${r.values} values and ${r.images} pictures`);PROG=await api('/progress');route()}catch(e){toast('Restore failed: '+e.message,6000)}}
-async function importX(f){const ow=confirm('Import typed values from this file.\n\nOK = overwrite existing values\nCancel = only fill empty fields');const fd=new FormData();fd.append('file',f);fd.append('mode',ow?'overwrite':'fill');
+async function importX(f){const ow=await new Promise(r=>{window._mcancel=()=>r(null);const c=v=>{window._mcancel=null;$('#modal').classList.remove('on');r(v)};modal(E('div',{class:'ed'},E('h2',{},'Import typed values'),E('p',{class:'mut'},'From “'+f.name+'”. Pictures are not imported.'),E('div',{class:'row'},E('div',{class:'grow'}),E('button',{class:'btn ghost',onclick:()=>c(null)},'Cancel'),E('button',{class:'btn',onclick:()=>c(true)},'Overwrite existing'),E('button',{class:'btn pri',onclick:()=>c(false)},'Fill empty fields only'))))});if(ow===null)return;const fd=new FormData();fd.append('file',f);fd.append('mode',ow?'overwrite':'fill');
  try{const r=await api('/import',{method:'POST',body:fd});toast(`Imported ${r.imported} values. ${r.note}`,8000);PROG=await api('/progress');route()}catch(e){toast('Import failed: '+e.message,6000)}}
 function doExport(){if(pending>0)return toast('Still saving…');toast('Building the .xlsm…');location=A('/export')}
 function onboard(){menu.classList.remove('open');modal(E('div',{class:'ob'},E('h2',{},'Welcome to the ASES app'),E('p',{class:'mut'},'The ASES proves to FSG that our accumulator (battery box) is safe. This app fills the official Excel for you.'),
@@ -287,5 +340,6 @@ function onboard(){menu.classList.remove('open');modal(E('div',{class:'ob'},E('h
   E('li',{},E('b',{},'2 · Fill it step by step'),'Type values and drop pictures. Everything saves automatically – no save button. Press Enter to jump to the next field, Alt+N (or “Next empty”) to jump to the next empty one, Ask (or / , Alt+A) for the assistant about the tab or field you are in, fields marked * are required, “i” for the rules and official guidance, and Review to see what is still missing.'),
   E('li',{},E('b',{},'3 · Export and back up'),'Export builds the official .xlsm for upload. Under “⋯” download a backup regularly – the server may be reset.')),
  E('button',{class:'btn pri',onclick:()=>{localStorage.seenIntro=1;$('#modal').classList.remove('on')}},'Got it')))}
+$('#thm').textContent=document.documentElement.classList.contains('dark')?'☀':'☾';
 init().then(()=>{if(!localStorage.seenIntro)onboard()}).catch(e=>{$('#main').textContent='Failed to load: '+e.message});
 </script></body></html>
