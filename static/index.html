@@ -60,7 +60,7 @@ nav .ow{margin-left:auto;font-size:11px;color:var(--mut)}
 .step .c{font-size:11px;opacity:.75}.step.dn:not(.on){border-color:#bbe5c8}.step.dn .c{color:var(--ok);opacity:1}.step.on .c{color:#fff}
 kbd{font:11px ui-monospace,monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 4px;color:var(--mut)}
 @media (max-width:820px){.need ul{columns:1}#nxe .hm{display:none}}
-</style></head><body>
+.he{color:var(--mut);font-size:13px;margin:2px 0 6px;text-align:right}</style></head><body>
 <header><button class="btn ghost burger" aria-label="Menu" onclick="nav.classList.toggle('on')">☰</button><div class="brand"><i></i>BIU Formula <span>· ASES 2026/27</span></div><div class="grow"></div>
 <button class="btn pri" onclick="doExport()">Export<span class="hm"> .xlsm</span></button>
 <div class="menu" id="menu"><button class="btn ghost" onclick="menu.classList.toggle('open')" title="More" aria-label="More actions">⋯</button><div class="dd">
@@ -143,7 +143,7 @@ async function openSheet(){const s=FM.sheets.find(x=>x.name===CUR);ST=await api(
    sk?null:needList(s,sec),
    sk?E('button',{class:'btn',onclick:()=>setSkip(sec.id,false)},'Mark as used'):renderItems(s,sec),
    !sk&&SEC===secs.length-1?notesBox(s):null));
- $('#main').replaceChildren(E('div',{class:'wrap'},E('div',{class:'th'},E('h1',{},s.title||CUR),ibtn),E('div',{class:'mut small'},'Excel tab “'+CUR+'” · Owner ',ownerIn(s)),WHY[CUR]?E('p',{class:'why'},WHY[CUR]):null,ib,body));$('#main').scrollTop=0;
+ $('#main').replaceChildren(E('div',{class:'wrap'},E('div',{class:'th'},E('h1',{},s.title||CUR),ibtn),heOf(CUR)?E('div',{class:'he',dir:'rtl',lang:'he'},heOf(CUR)):null,E('div',{class:'mut small'},'Excel tab “'+CUR+'” · Owner ',ownerIn(s)),WHY[CUR]?E('p',{class:'why'},WHY[CUR]):null,ib,body));$('#main').scrollTop=0;
  $('#tabopts').replaceChildren(E('hr'),E('label',{},E('input',{type:'checkbox',checked:sk,disabled:na,onchange:e=>setSkip(sec.id,e.target.checked)}),'This section is not used'),E('label',{},E('input',{type:'checkbox',checked:na,onchange:e=>setSkip('*',e.target.checked)}),'Whole tab not applicable'));
  const nxt=SEC<secs.length-1&&!na?()=>go(CUR,SEC+1):si<FM.sheets.length-1?()=>go(FM.sheets[si+1].name):()=>go('__overview');
  const prv=SEC>0&&!na?()=>go(CUR,SEC-1):si>0?()=>go(FM.sheets[si-1].name,FM.sheets[si-1].sections.length-1):()=>go('__overview');
@@ -151,6 +151,8 @@ async function openSheet(){const s=FM.sheets.find(x=>x.name===CUR);ST=await api(
 function needList(s,sec){const L=secItems(s,sec);if(L.length<2)return null;return E('details',{class:'need'},E('summary',{},`What you need (${L.length} items)`),E('ul',{},L.map(x=>E('li',{'data-ni':JSON.stringify(sec.items.find(it=>(it.cell||it.id)===x.id.replace(/^T:/,''))),onclick:()=>focusItem(x.id)},niceLabel(x.label,sec.title,null)+(x.req?'':' (optional)')))))}
 function ownerIn(s){const i=E('input',{class:'own',placeholder:'who is responsible?','aria-label':'Owner of this tab',value:PROG[s.name]?.owner||''});
  i.oninput=debounce(async()=>{saving(1);try{await post('/owner',{sheet:s.name,name:i.value});PROG[s.name].owner=i.value.trim();drawNav()}catch(e){bad(e)}saving(-1)},600);return i}
+const HE={'Read_Me':'הוראות מילוי מ-FSG, לקריאה בלבד.','Version History':'יומן שינויים בין הגשות, למשל מה תוקן אחרי הערות בודק.','Rules Clarifications':'הבהרות תקנון שקיבלתם מהוועדה ורלוונטיות לסוללה.','Cover Sheet':'פרטי הצוות, וטבלה שמסמנים בה לכל כלל אם הוכחתם עמידה ובאיזו דרך.','Accumulator Pics':'חומר המארז, עוביים, מידות ותמונות של המארז.','EV5.5.5 Alt. Matl - 3pt Bending':'תוצאות מבחנים שמוכיחים שחומר שאינו פלדה שקול לפלדה.','EV5.5.5 Alt. Matl - Shear':'תוצאות מבחנים שמוכיחים שחומר שאינו פלדה שקול לפלדה.','Alt. Matls Summary':'סיכום שמחושב אוטומטית, בלי מילוי.','Materials Overview':'סיכום שמחושב אוטומטית, בלי מילוי.','Datasheets Fiber':'תכונות החומרים והדבקים, ואם ביצעתם מבחן משלכם.','Datasheets Other Matl':'תכונות החומרים והדבקים, ואם ביצעתם מבחן משלכם.','Datasheets Glue':'תכונות החומרים והדבקים, ואם ביצעתם מבחן משלכם.','EV5.5.10-12 Cell Fixation':'איך התאים מקובעים, והוכחה שהמאמצים עליהם בגבולות התקנון.','EV5.5.9 Segment':'חישובים ותמונות שמראים שהסגמנטים, המארז והחיבור שלו לשלדה עומדים בעומסים.','EV5.5.9 TSAC':'חישובים ותמונות שמראים שהסגמנטים, המארז והחיבור שלו לשלדה עומדים בעומסים.','EV5.5.9 TSAC attachments':'חישובים ותמונות שמראים שהסגמנטים, המארז והחיבור שלו לשלדה עומדים בעומסים.','EV5.5.13 Fasteners':'הברגים במארז: אם הם מבניים, מוליכים או עם נעילה חיובית, עם תמונות CAD.','EV5.5.14-17 Openings&Separation':'רשימת כן/לא על פתחים במארז ועל הפרדה בין חלקים, עם תמונות.','Additional Info':'מקום חופשי לכל מה שלא נכנס במקום אחר.'};
+const heOf=n=>HE[n]||(/guid/i.test(n)?'הסבר רשמי לכלל, לקריאה בלבד.':'');
 const WHY={
  'Cover Sheet':'Who you are, plus a Yes/N/A per tab: does this ASES contain the proof for that rule? Fill it last, when the other tabs are done.',
  'Accumulator Pics':'Show what each accumulator wall is made of and how thick it is, with dimensioned pictures – this is how the reviewers check the container against the rules.',
