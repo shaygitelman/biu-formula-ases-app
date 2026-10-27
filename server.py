@@ -209,7 +209,8 @@ def check(tid, name): sheet_of(tid, name); return jsonify(findings(tid, name)[0]
 def chat(tid):
     j = request.json; name = j["sheet"]; s = sheet_of(tid, name); f, vals = findings(tid, name)
     guid = "\n".join(tpl(tid)["fm"]["guidance"].get(k, "") for k in s.get("guidance", []) + ["Read_Me"])
-    return jsonify({"answer": checks.assistant(s, j["message"], vals, [x for x in f if x["level"] != "rule"], guid, j.get("history"), rules_ctx(tid, name)), "llm": bool(checks.llm_config())})
+    sr = with_req(tid, s); fld = next((x for x in sr.get("fields", []) if x.get("cell") == j.get("field")), None) if j.get("field") else None
+    return jsonify({"answer": checks.assistant(sr, j["message"], vals, [x for x in f if x["level"] != "rule"], guid, j.get("history"), rules_ctx(tid, name), fld), "llm": bool(checks.llm_config())})
 
 # ---------- export ----------
 def col_shift(cell, k):

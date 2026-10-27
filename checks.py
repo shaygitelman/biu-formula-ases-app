@@ -126,7 +126,13 @@ def llm_config():
     if os.environ.get("OPENAI_API_KEY"): return (os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1") + "/chat/completions", os.environ["OPENAI_API_KEY"], os.environ.get("LLM_MODEL", "gpt-4o-mini"))
     return None
 
-def assistant(sheet, question, vals, findings, guidance, history=None, rules_ctx=""):
+def assistant(sheet, question, vals, findings, guidance, history=None, rules_ctx="", field=None):
+    ev = [(e["text"], e["src"]) for e in sheet.get("evidence", [])]
+    fctx = ""
+    if field:
+        fctx = (f'Field asked about: {field.get("label")} (Excel cell {field.get("range") or field["cell"]}; '
+                f'{"required" if field.get("required") is True else "not marked required"}; current value: {vals.get(field["cell"]) or "empty"}).\n'
+                + (f'How to fill: {field["help"]}\n' if field.get("help") else ""))
     ctx = "\n".join(TEAM_GUIDE["general"] + TEAM_GUIDE.get(sheet["name"], [])) + "\nFS Rules 2027 (authoritative; template numbering is 2026):\n" + rules_ctx
     filled = {f'{f["label"]} ({f["cell"]})': vals.get(f["cell"]) for f in sheet["fields"] if vals.get(f["cell"])}
     cfg = llm_config()
@@ -134,7 +140,8 @@ def assistant(sheet, question, vals, findings, guidance, history=None, rules_ctx
         url, key, model = cfg
         sysmsg = ("You help a Formula Student electric team fill the FSG ASES (Accumulator Structural Equivalency Spreadsheet) so it is not rejected. "
                   "Answer in English, concisely and concretely: what is missing, what evidence to add, which rule (cite FS Rules 2027 numbers). "
-                  f"Current tab: {sheet['name']}.\nOfficial guidance text from the template:\n{guidance[:6000]}\nTeam checklist and rules:\n{ctx}\n"
+                  f"Current tab: {sheet['name']}.\n{fctx}Official requirements (text [source]): " + "; ".join(f"{x} [{y}]" for x, y in ev)[:4000] + "\n"
+                  f"Always cite the rule number or source for each claim.\nOfficial guidance text from the template:\n{guidance[:6000]}\nTeam checklist and rules:\n{ctx}\n"
                   f"Automatic check findings: {json.dumps(findings, ensure_ascii=False)}\nEntered data: {json.dumps(filled, ensure_ascii=False)[:4000]}")
         msgs = [{"role": "system", "content": sysmsg}] + (history or [])[-8:] + [{"role": "user", "content": question}]
         req = urllib.request.Request(url, data=json.dumps({"model": model, "messages": msgs, "temperature": 0.2}).encode(),
@@ -146,8 +153,18 @@ def assistant(sheet, question, vals, findings, guidance, history=None, rules_ctx
     hits = [l for l in rules_ctx.split("\n") if any(l.upper().startswith(q.upper() + ":") for q in rq)]
     words = [w.lower() for w in re.findall(r"[A-Za-z][A-Za-z0-9.]{3,}", question)]
     lines = [l for l in (guidance + "\n" + ctx).split("\n") if l.strip() and any(w in l.lower() for w in words)][:8]
-    msg = "Offline mode (no AI key configured) – answer based on the automatic checks, the template guidance and FS Rules 2027:\n"
+    rq_up = [q.upper() for q in rq]
+    evh = [(x, y) for x, y in ev if any(q in y.replace(" ", "").upper() for q in rq_up)] if rq_up else [(x, y) for x, y in ev if sum(w in x.lower() for w in words) >= 2][:5]
+    if not rq_up and re.search(r"missing|still|left|todo", question, re.I): evh = ev[:8]
+    msg = ""
+    if field:
+        msg += f'About: {field.get("label")} – Excel cell {field.get("range") or field["cell"]}, ' + ("required" if field.get("required") is True else "not marked required") + f'; currently {"filled" if vals.get(field["cell"]) else "empty"}.\n'
+        if field.get("help"): msg += f'How to fill: {field["help"]}\n'
+        msg += "\n"
+    msg += "Offline mode (no AI key configured) – answer based on the automatic checks, the template guidance and FS Rules 2027:\n"
     msg += "\n".join("• " + f["msg"] for f in findings if f["level"] in ("error", "warn"))[:2000] or "• No open findings."
-    if hits: msg += "\n\nFS Rules 2027:\n" + "\n".join(hits)
-    if lines: msg += "\n\nRelevant guidance:\n" + "\n".join("– " + l.strip()[:300] for l in lines)
+    if evh: msg += "\n\nOfficial requirements:\n" + "\n".join(f"• {x} [{y}]" for x, y in evh)
+    if hits: msg += "\n\nFS Rules 2027 [rule text]:\n" + "\n".join(hits)
+    elif rq and not evh: msg += "\n\n" + ", ".join(rq) + " is not mapped to this tab – check the FS Rules 2027 document directly."
+    if lines: msg += "\n\nRelevant guidance:\n" + "\n".join("– " + l.strip()[:300] + " [template guidance]" for l in lines)
     return msg
