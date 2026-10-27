@@ -56,6 +56,7 @@ nav .ow{margin-left:auto;font-size:11px;color:var(--mut)}
 .tag{font-size:11.5px;font-weight:400;color:var(--mut);border:1px solid var(--line);border-radius:6px;padding:0 6px;margin-left:4px}.ok{color:var(--ok);font-size:13px;margin-left:auto}
 .hl{border:0;background:none;color:#2563eb;cursor:pointer;font-size:12.5px;padding:0;margin-left:6px}.fh{background:#f8f9fb;border-radius:8px;padding:10px 12px}.fh .cellref{display:block;margin-top:6px;font-size:11.5px;color:var(--mut)}
 .chd{display:flex;align-items:baseline;gap:10px}.chd h2{flex:1}.sp{font-size:13px;color:var(--mut);white-space:nowrap}.sp.d{color:var(--ok)}
+.req{margin:10px 0 0;max-width:720px}.req summary{cursor:pointer;font-size:13px;color:#2563eb}.req ul{margin:8px 0 0;padding-left:18px}.req li{font-size:13px;padding:3px 0;color:#3a4254}.req .src{display:inline-block;margin-left:6px;font-size:11px;color:var(--mut);background:#f1f3f7;border-radius:5px;padding:0 6px}
 .need{margin:4px 0 14px}.need summary{cursor:pointer;font-size:13px;color:#2563eb}.need ul{list-style:none;padding:0;margin:8px 0 0;columns:2;column-gap:24px}.need li{font-size:13px;padding:3px 0;cursor:pointer;break-inside:avoid}.need li:before{content:"○ ";color:var(--mut)}.need li.y{color:var(--mut)}.need li.y:before{content:"✓ ";color:var(--ok)}.need li:hover{text-decoration:underline}
 .step .c{font-size:11px;opacity:.75}.step.dn:not(.on){border-color:#bbe5c8}.step.dn .c{color:var(--ok);opacity:1}.step.on .c{color:#fff}
 kbd{font:11px ui-monospace,monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 4px;color:var(--mut)}
@@ -123,11 +124,12 @@ function route(){if(!FM)return;const[h,sc]=decodeURIComponent(location.hash.slic
 function setFooter(prev,next,nextLabel){const p=$('#prev'),n=$('#next');p.style.visibility=prev?'visible':'hidden';p.onclick=prev;n.onclick=next;n.textContent=nextLabel||'Next →'}
 async function overview(){const ov=await api('/overview');const live=ov.filter(o=>!o.na&&!o.optional),tot=live.reduce((a,o)=>a+o.total,0),done=live.reduce((a,o)=>a+o.done,0),pct=tot?Math.round(100*done/tot):0,errs=ov.reduce((a,o)=>a+o.error,0);
  const ck=[[ov.every(o=>o.pct>=100||o.na),'Every tab complete or marked not applicable'],[errs===0,'No errors in the automatic review'],[live.every(o=>o.warn===0),'No open warnings'],[null,'Reviewed by a second team member'],[null,'Backup downloaded after the last change']];
+ const szl=E('li',{},'Export file ≤ 50 MB (Event Handbook DE 4.2.3) – checking…');api('/sizecheck').then(r=>{szl.className=r.ok?'y':'n';szl.textContent=`Export file ≈ ${r.mb} MB of max. ${r.max_mb} MB (${r.src})`+(r.ok?'':' – compress or crop pictures')}).catch(()=>{szl.textContent='Export size could not be checked'});
  $('#main').replaceChildren(E('div',{class:'wrap'},E('h1',{},'Accumulator Structural Equivalency'),E('p',{class:'mut',style:'margin:4px 0 26px'},'Fill each tab step by step. Everything saves automatically and the export goes into the official FSG template.'),
   E('div',{class:'card big'},E('div',{class:'pc'},pct+'%'),E('div',{class:'grow'},E('div',{class:'bar'},E('i',{style:`width:${pct}%`})),E('div',{class:'mut small',style:'margin-top:8px'},`${done} of ${tot} items · ${errs} errors`))),
   E('div',{class:'card',style:'margin-top:16px'},E('h2',{},'Tabs'),E('div',{class:'list',style:'margin-top:10px'},ov.map(o=>(o.owner=PROG[o.sheet]?.owner||'',0)||E('div',{class:'row',onclick:()=>go(o.sheet)},E('i',{class:'dot '+status(PROG[o.sheet]=o)}),E('span',{class:'nm'},short(o.sheet)),
    o.owner?E('span',{class:'mut small'},o.owner):null,E('span',{class:'mut small'},o.na?'not applicable':o.optional?'optional':`${o.done}/${o.total}`),E('div',{class:'bar'},E('i',{style:`width:${o.na?0:o.pct}%`})))))),
-  E('div',{class:'card',style:'margin-top:16px'},E('h2',{style:'margin-bottom:10px'},'Ready to export?'),E('ul',{class:'cl'},ck.map(([ok,t])=>E('li',{class:ok===null?'':ok?'y':'n'},t)))),
+  E('div',{class:'card',style:'margin-top:16px'},E('h2',{style:'margin-bottom:10px'},'Ready to export?'),E('ul',{class:'cl'},[...ck.map(([ok,t])=>E('li',{class:ok===null?'':ok?'y':'n'},t)),szl])),
   FM.needs_review?.length?E('details',{class:'fold'},E('summary',{},`${FM.needs_review.length} template cells left out for review`),E('ul',{class:'small mut'},FM.needs_review.map(x=>E('li',{},x)))):null));
  drawNav();$('#tabopts').replaceChildren();setFooter(null,()=>go(FM.sheets[0].name),'Start →');FIND=[];badge()}
 async function openSheet(){const s=FM.sheets.find(x=>x.name===CUR);ST=await api('/sheet/'+encodeURIComponent(CUR));const skip=new Set(ST.skip),na=skip.has('*');
@@ -143,11 +145,12 @@ async function openSheet(){const s=FM.sheets.find(x=>x.name===CUR);ST=await api(
    sk?null:needList(s,sec),
    sk?E('button',{class:'btn',onclick:()=>setSkip(sec.id,false)},'Mark as used'):renderItems(s,sec),
    !sk&&SEC===secs.length-1?notesBox(s):null));
- $('#main').replaceChildren(E('div',{class:'wrap'},E('div',{class:'th'},E('h1',{},s.title||CUR),ibtn),heOf(CUR)?E('div',{class:'he',dir:'rtl',lang:'he'},heOf(CUR)):null,E('div',{class:'mut small'},'Excel tab “'+CUR+'” · Owner ',ownerIn(s)),WHY[CUR]?E('p',{class:'why'},WHY[CUR]):null,ib,body));$('#main').scrollTop=0;
+ $('#main').replaceChildren(E('div',{class:'wrap'},E('div',{class:'th'},E('h1',{},s.title||CUR),ibtn),heOf(CUR)?E('div',{class:'he',dir:'rtl',lang:'he'},heOf(CUR)):null,E('div',{class:'mut small'},'Excel tab “'+CUR+'” · Owner ',ownerIn(s)),WHY[CUR]?E('p',{class:'why'},WHY[CUR]):null,reqBox(s),ib,body));$('#main').scrollTop=0;
  $('#tabopts').replaceChildren(E('hr'),E('label',{},E('input',{type:'checkbox',checked:sk,disabled:na,onchange:e=>setSkip(sec.id,e.target.checked)}),'This section is not used'),E('label',{},E('input',{type:'checkbox',checked:na,onchange:e=>setSkip('*',e.target.checked)}),'Whole tab not applicable'));
  const nxt=SEC<secs.length-1&&!na?()=>go(CUR,SEC+1):si<FM.sheets.length-1?()=>go(FM.sheets[si+1].name):()=>go('__overview');
  const prv=SEC>0&&!na?()=>go(CUR,SEC-1):si>0?()=>go(FM.sheets[si-1].name,FM.sheets[si-1].sections.length-1):()=>go('__overview');
  setFooter(prv,nxt,SEC<secs.length-1&&!na?'Next →':si<FM.sheets.length-1?'Next tab →':'Finish →');refreshProg();runCheck()}
+function reqBox(s){const L=s.evidence||[];if(!L.length)return null;return E('details',{class:'req'},E('summary',{},`Official requirements (${L.length})`),E('ul',{},L.map(x=>E('li',{},x.text,E('span',{class:'src'},x.src)))),E('p',{class:'mut small',style:'margin:6px 0 0'},'R27 = FS Rules 2027 v1.0 · HB26 = FSG 2026 Event Handbook (2027 not yet published) · TPL = official ASES template text'))}
 function needList(s,sec){const L=secItems(s,sec);if(L.length<2)return null;return E('details',{class:'need'},E('summary',{},`What you need (${L.length} items)`),E('ul',{},L.map(x=>E('li',{'data-ni':JSON.stringify(sec.items.find(it=>(it.cell||it.id)===x.id.replace(/^T:/,''))),onclick:()=>focusItem(x.id)},niceLabel(x.label,sec.title,null)+(x.req?'':' (optional)')))))}
 function ownerIn(s){const i=E('input',{class:'own',placeholder:'who is responsible?','aria-label':'Owner of this tab',value:PROG[s.name]?.owner||''});
  i.oninput=debounce(async()=>{saving(1);try{await post('/owner',{sheet:s.name,name:i.value});PROG[s.name].owner=i.value.trim();drawNav()}catch(e){bad(e)}saving(-1)},600);return i}
@@ -209,9 +212,9 @@ function table(s,t){if(!t)return null;const key='T:'+t.id;let rows=ST.values[key
   try{const r=await post('/value',{sheet:s.name,cell:key,value:rows.length?JSON.stringify(rows):'',user:who.value});ST.values[key]=rows.length?'x':'';refreshProg();PROG[s.name]=r.progress;drawNavSoft();checkSoon()}catch(e){bad(e)}saving(-1);show()},900);show();
  const help=t.help?E('div',{class:'fh',style:'display:none'},t.help):null;
  return E('div',{class:'f'},E('label',{},t.label,help?hl(help):null,E('span',{class:'ok','data-ok':JSON.stringify({kind:'table',id:t.id})})),help,ta,info)}
-function notesBox(s){const n=E('textarea',{class:'x',placeholder:'Optional. Justify any N/A answer here – it is added to the Additional Info tab.',style:'min-height:70px'});n.value=ST.notes||'';
+function notesBox(s){const n=E('textarea',{class:'x',placeholder:'Optional. Explanation for the reviewer (e.g. why an item is N/A). Exported to the Additional Info tab – the official place for information not covered by the standard forms.',style:'min-height:70px'});n.value=ST.notes||'';
  n.oninput=debounce(()=>{saving(1);post('/notes',{sheet:s.name,text:n.value,user:who.value}).then(()=>saving(-1),e=>{saving(-1);bad(e)})},700);
- return E('details',{class:'fold',open:!!ST.notes},E('summary',{},'Notes & N/A justifications'),E('div',{style:'margin-top:8px'},n))}
+ return E('details',{class:'fold',open:!!ST.notes},E('summary',{},'Explanation for the reviewer → Additional Info'),E('div',{style:'margin-top:8px'},n))}
 async function afterChange(s){refreshProg();PROG[s.name]=(await api('/sheet/'+encodeURIComponent(s.name))).progress;drawNavSoft();checkSoon()}
 const drawNavSoft=debounce(drawNav,150),checkSoon=debounce(()=>runCheck(),1200);
 async function setSkip(sec,on){await post('/skip',{sheet:CUR,section:sec,skip:on});PROG=await api('/progress');menu.classList.remove('open');openSheet();drawNav()}

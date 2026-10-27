@@ -1,0 +1,156 @@
+{
+ "_note": "Official requirements per tab. Sources: R27 = FS Rules 2027 v1.0 (formulastudent.de/fsg/rules); HB26 = FSG26 Event Handbook v1.5.1 (2027 handbook not yet published, values may change); TPL = FS26 ASES v1.0 template text (Read_Me, tab text, guidance sheets). Only what these documents state; nothing inferred.",
+ "Cover Sheet": {
+  "evidence": [
+   ["Upload the filled ASES on the competition website before the deadline in the Event Handbook (2026: 13:00 CET; 13:00:00.000 is already late).", "HB26 DE 4.2.1-4.2.2"],
+   ["Late upload: −10 points; not uploaded within 24 h after the deadline: team de-registered.", "R27 A 5.4.1-5.4.2"],
+   ["Largely incomplete or unreadable documents count as not submitted.", "R27 A 5.2.3"],
+   ["Maximum file size 50 MB.", "HB26 DE 4.2.3"],
+   ["Do not rename or delete any tab.", "TPL Read_Me"],
+   ["All dimensions and units in SI.", "TPL Read_Me"]
+  ],
+  "fields": [
+   ["^M2[5-9]|^M3|^N3|^O3", "Mandatory rows: proof is always required. Optional rows: proof may be required depending on your accumulator concept – if it is, it must be included. Answer Yes only when the linked tab really shows the proof.", "TPL Cover Sheet"]
+  ]
+ },
+ "Accumulator Pics": {
+  "evidence": [
+   ["Drawings and images of the TSAC: materials used, fastener locations, section weight, cell and section position.", "R27 EV 5.5.4"],
+   ["Colour-code all walls/panels/lay-ups; three-view drawings and isometric views.", "TPL Accumulator Pics"],
+   ["Side view in chassis with height marked – TSAC must lie fully inside the primary structure and not exceed the impact-structure height in side view.", "R27 EV 5.5.1"],
+   ["Steel/aluminium minimum thickness: floor 1.25 mm steel / 3.2 mm Al; walls, covers, lids 0.9 mm steel / 2.3 mm Al. Other materials need proof of equivalency (T 3.4 / EV 5.5.6) and test samples at Technical Inspection.", "R27 EV 5.5.5"]
+  ],
+  "fields": [
+   ["^S1[4-7]$", "Measured metallic sheet thickness. Minimum: floor 1.25 mm steel / 3.2 mm Al; walls & cover 0.9 mm steel / 2.3 mm Al.", "R27 EV 5.5.5"],
+   ["^Z(8|9|10|11)$", "How the composite equivalency to T 3.4 is proven (refer to your 3-point-bending/shear tabs).", "TPL Accumulator Pics; R27 T 3.4"]
+  ],
+  "images": [
+   ["^R27$", "Side view with the height clearly marked (TSAC must not exceed the impact structure height in side view).", "R27 EV 5.5.1"]
+  ]
+ },
+ "EV5.5.5 Alt. Matl - 3pt Bending": {
+  "evidence": [
+   ["Test panel: same design, laminate and process as the TSAC part. 275 × 500 mm (span ≥ 400 mm, metallic applicator R 50 mm), or for TSAC core ≤ 5 mm: 150 × 275 mm (span ≥ 200 mm, applicator R ≥ 5 mm). Panel sides not laminated.", "R27 T 3.6.1, T 3.6.7-3.6.8"],
+   ["Pictures must show: support distance, load-applicator dimensions, and sample marking.", "R27 T 3.6.1"],
+   ["Load–deflection curve per panel.", "TPL 3pt Bending tab"],
+   ["State material types, cloth weights, resin, fiber orientation, number of layers, core, lay-up technique, adhesive film.", "R27 T 3.5.2"],
+   ["Max. 50 % parallel fibers (±10° window) by weight.", "R27 T 3.5.3"],
+   ["Samples marked permanently (no sticker) with laminate acronym and test date, and brought to Technical Inspection.", "R27 T 3.6.6"],
+   ["Calculations and physical test results must be in the ASES; steel backing plates ≥ 2 mm at each attachment point.", "R27 EV 5.5.6"]
+  ]
+ },
+ "EV5.5.5 Alt. Matl - Shear": {
+  "evidence": [
+   ["Perimeter shear test: 25 mm flat punch, sample ≥ 100 × 100 mm, same core/skin thickness, materials and process; thinner skin faces the punch if asymmetrical.", "R27 T 3.6.11"],
+   ["Fixture supports the whole sample except a 32 mm coaxial hole; sample not clamped.", "R27 T 3.6.12"],
+   ["Enter BOTH peaks from the load curve.", "TPL T3.5.9 Guidance Notes"],
+   ["Samples marked permanently and brought to Technical Inspection.", "R27 T 3.6.6"]
+  ]
+ },
+ "Datasheets Fiber": {
+  "evidence": [
+   ["Datasheet pages for every material used.", "TPL Datasheets tab"],
+   ["Fire retardant proof: UL94 V-0 (min. thickness), FAR 25.853(a)(1)(i), UL94 HF-1 (foams) or UL94 VTM-0; other standards only if approved before the event. Own tests need documentation.", "R27 T 1.2.1, EV 5.5.3"]
+  ],
+  "fields": [
+   ["Fire rating", "YES = datasheet shows one of the accepted fire ratings; 'Performed own test' = document the test (report, pictures) in this ASES.", "R27 T 1.2.1"]
+  ]
+ },
+ "Datasheets Other Matl": {
+  "evidence": [
+   ["Datasheet pages for every material used.", "TPL Datasheets tab"],
+   ["Fire retardant proof per T 1.2.1 (UL94 V-0 / FAR 25.853 / UL94 HF-1 / UL94 VTM-0).", "R27 T 1.2.1, EV 5.5.3"],
+   ["Non-metallic, non-continuous-fiber materials: mechanical properties at ≥ 60 °C – from datasheet (Tg/Vicat alone not enough), own documented tests, or scientific justification with knock-down factor.", "R27 EV 5.5.3; TPL EV5.5.3 Guidance Notes"]
+  ],
+  "fields": [
+   ["Fire rating", "YES = datasheet shows an accepted fire rating; 'Performed own test' = document the test in this ASES.", "R27 T 1.2.1"],
+   ["at 60", "Must explicitly show values at ≥ 60 °C. Glass transition / Vicat temperature alone is not sufficient.", "TPL EV5.5.3 Guidance Notes"]
+  ]
+ },
+ "Datasheets Glue": {
+  "evidence": [
+   ["Datasheet pages for every adhesive used.", "TPL Datasheets tab"],
+   ["Fire retardant proof per T 1.2.1.", "R27 T 1.2.1, EV 5.5.3"],
+   ["Mechanical properties at ≥ 60 °C (datasheet, own test, or justified knock-down).", "R27 EV 5.5.3; TPL EV5.5.3 Guidance Notes"],
+   ["50 % reduction on all nominal and tested adhesive values for bonded joints.", "R27 T 3.2.8"]
+  ],
+  "fields": [
+   ["Fire rating", "YES = datasheet shows an accepted fire rating; 'Performed own test' = document the test in this ASES.", "R27 T 1.2.1"],
+   ["at 60", "Must explicitly show values at ≥ 60 °C. Tg alone is not sufficient.", "TPL EV5.5.3 Guidance Notes"]
+  ]
+ },
+ "EV5.5.10-12 Cell Fixation": {
+  "evidence": [
+   ["Pictures of the cell fixation showing the force path.", "TPL Cell Fixation tab"],
+   ["Pouch cells: fixed only via the large surface(s), ≥ 80 % of each used surface; tabs must not press into the pouch. Document how pretension is applied.", "R27 EV 5.5.12"],
+   ["Proof that cell stress ≤ 0.05 MPa shear and ≤ 1.0 MPa compression (or datasheet limit if lower), using 80 % of the nominal large surface.", "R27 EV 5.5.14"],
+   ["Friction-based fixation: physical friction test (real cell or representative mock-up), several pressures, several runs each; results table, setup pictures, chosen coefficient argued.", "R27 EV 5.5.15; TPL EV5.5.12 Guidance Notes"]
+  ],
+  "fields": [
+   ["^M25$", "Coefficient from your own friction test – not from literature. Describe the test in 'Fixation concept, calculations, friction test'.", "R27 EV 5.5.15; TPL EV5.5.12 Guidance Notes"],
+   ["^M22$", "Clamping (pretension) force. The method used to apply it must be documented.", "R27 EV 5.5.12"],
+   ["^M20$", "Supported on both sides: cells between supports ÷ 2. Supported on one side: all cells on that support.", "TPL EV5.5.10-11 Guidance Notes"]
+  ]
+ },
+ "EV5.5.9 Segment": {
+  "evidence": [
+   ["Show for every part/interface and every direction X, Y, Z: 40 g longitudinal, 40 g lateral, 20 g vertical.", "R27 EV 5.5.8, T 3.3.1; TPL EV5.5.9 Guidance Notes"],
+   ["Analytical calculations always required; FEM only supportive and must have legends, model description, readable numbers and mesh info – otherwise direct FAIL.", "TPL EV5.5.9 Guidance Notes"],
+   ["Parts in the high-current path must not carry mechanical loads.", "R27 EV 5.5.13"]
+  ]
+ },
+ "EV5.5.9 TSAC": {
+  "evidence": [
+   ["Show every direction X, Y, Z: 40 g / 40 g / 20 g.", "R27 EV 5.5.8, T 3.3.1"],
+   ["Analytical calculations always required; FEM without legends/model/mesh info = FAIL.", "TPL EV5.5.9 Guidance Notes"],
+   ["Bonded joints: 50 % reduction on adhesive values.", "R27 T 3.2.8"]
+  ]
+ },
+ "EV5.5.9 TSAC attachments": {
+  "evidence": [
+   ["At least 2 attachment points; brackets ≥ 1.6 mm steel or ≥ 4 mm aluminium, with gussets for bending loads.", "R27 EV 5.5.9"],
+   ["Show every direction X, Y, Z: 40 g / 40 g / 20 g.", "R27 EV 5.5.8, T 3.3.1"],
+   ["Bolted TSAC-to-chassis tabs/brackets: edge distance e/D ≥ 1.5.", "R27 T 10.1.4"],
+   ["Analytical calculations preferred; FEM without legends/model/mesh info = FAIL.", "TPL EV5.5 TSAC Attachment Guidance"]
+  ]
+ },
+ "EV5.5.13 Fasteners": {
+  "evidence": [
+   ["Show all fasteners in groups with (CAD) pictures, even those exempt from T 10.", "TPL Fasteners tab"],
+   ["Fasteners within or mounting the TSAC follow T 10; non-structural ones inside (e.g. PCBs) are exempt from T 10.1.2; non-conductive non-structural ones inside are exempt from T 10.", "R27 EV 5.5.16"],
+   ["Critical threaded fasteners: steel, ≥ M4 grade 8.8, strength class identifiable; hex bolts or socket head cap screws.", "R27 T 10.1.2-10.1.3"]
+  ],
+  "fields": [
+   ["Positive Locking", "Name the positive locking mechanism used for this group.", "TPL Fasteners tab; R27 T 10"]
+  ]
+ },
+ "EV5.5.14-17 Openings&Separation": {
+  "evidence": [
+   ["Each section ≤ 120 V DC, ≤ 6 MJ, ≤ 12 kg.", "R27 EV 5.3.4"],
+   ["Sections separated by internal vertical walls up to the lid.", "R27 EV 5.5.11"],
+   ["Holes only for harness, ventilation, cooling or fasteners; total cutout < 25 % per wall; external holes sealed (EV 4.5).", "R27 EV 5.5.18"],
+   ["External openings/ducts not pointing at driver or hand-cart operator; ducts fire retardant and sealed.", "R27 EV 5.5.19"],
+   ["Ventilation if gas can vent; pressure relief valve if fully sealed.", "R27 EV 5.5.20-5.5.21"],
+   ["AIRs and main fuse separated from the accumulator by insulating, fire-retardant material (air not accepted).", "R27 EV 5.5.17"],
+   ["Images with dimensions and labels.", "TPL Openings tab"]
+  ]
+ },
+ "Additional Info": {
+  "evidence": [
+   ["Use for proof not covered by the standard forms (e.g. material receipts). The tab may be copied if one page is not enough.", "TPL Additional Info"],
+   ["New template problem or clarification ≤ 72 h before the deadline: put your own proof of equivalency here AND submit a rules question.", "TPL Read_Me"]
+  ]
+ },
+ "Version History": {
+  "evidence": [
+   ["On resubmission, list what changed vs. the previous submission.", "TPL Version History"],
+   ["Requested corrections must be uploaded within 7 days and contain all requested corrections, otherwise de-registration.", "R27 A 5.3.1, A 5.3.4"]
+  ]
+ },
+ "Rules Clarifications": {
+  "evidence": [
+   ["Reference every rules clarification here – clarifications not listed are ignored in the review.", "TPL Rules Clarifications"],
+   ["Check the FAQ before asking; bring print-outs of rule questions to accumulator inspection.", "R27 A 3.6.2, IN 3.2.1"]
+  ]
+ }
+}

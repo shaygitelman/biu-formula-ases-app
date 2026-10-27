@@ -99,11 +99,29 @@ def index(): return Response(open(HERE + "/static/index.html", "rb").read(), mim
 def templates(): return jsonify({k: {**v, "loaded": k in T} for k, v in REG.items()})
 @app.get("/api/rules/<rid>")
 def rule(rid): r = RULES.get(rid.replace(" ", "")); return jsonify({"id": rid, "text": r}) if r else (jsonify({"error": "not found"}), 404)
+def with_req(tid, s):
+    """Attach official requirements (templates/<id>/requirements.json): tab evidence checklist + per-field 'How to fill' with source."""
+    rp = os.path.join(TD, tid, "requirements.json")
+    if not os.path.exists(rp): return s
+    rq = json.load(open(rp)).get(s["name"])
+    if not rq: return s
+    def add(items, rules, key):
+        out = []
+        for it in items:
+            it = dict(it)
+            for pat, how, src in rules:
+                if re.search(pat, it.get(key, "")) or re.search(pat, it.get("label", "")):
+                    it["help"] = ((it.get("help") or "").strip() + "\n\n" if it.get("help") else "") + f"{how}\nSource: {src}"
+                    it["src"] = src; break
+            out.append(it)
+        return out
+    return {**s, "evidence": [{"text": a, "src": b} for a, b in rq.get("evidence", [])],
+            "fields": add(s.get("fields", []), rq.get("fields", []), "cell"), "images": add(s.get("images", []), rq.get("images", []), "id")}
 @app.get("/api/<tid>/fieldmap")
 def fieldmap(tid):
     t = tpl(tid); fm = t["fm"]
     return jsonify({"template": fm["template"], "title": t["meta"]["title"], "guidance": fm.get("guidance", {}), "needs_review": fm.get("needs_review", []),
-        "sheets": [{**{k: v for k, v in s.items() if not k.startswith("_")}, "rules": t["rule_map"].get(s["name"], {}),
+        "sheets": [{**{k: v for k, v in with_req(tid, s).items() if not k.startswith("_")}, "rules": t["rule_map"].get(s["name"], {}),
                     "rule_texts": {r: RULES[r] for r in t["rule_map"].get(s["name"], {}).get("rules_2027", []) if r in RULES}} for s in fm["sheets"]]})
 @app.get("/api/<tid>/progress")
 def all_progress(tid):
@@ -237,6 +255,16 @@ def build_export(tid, path):
 def export(tid):
     ext = os.path.splitext(tpl(tid)["file"])[1]; path = os.path.join(DD, f"export_{tid}{ext}"); build_export(tid, path)
     return send_file(path, as_attachment=True, download_name=f"BIU_{tid.upper()}_{time.strftime('%Y%m%d_%H%M')}{ext}")
+
+MAX_UPLOAD_MB = 50  # FSG26 Event Handbook DE 4.2.3: all documents max. 50 MB (2027 handbook not yet published)
+@app.get("/api/<tid>/sizecheck")
+def sizecheck(tid):
+    """Cheap upper estimate: template + all uploaded pictures (export embeds them as-is or smaller)."""
+    t = tpl(tid); b = os.path.getsize(t["file"])
+    for r in db().execute("select file from imgs where tpl=?", (tid,)):
+        fp = os.path.join(UP, r["file"]); b += os.path.getsize(fp) if os.path.exists(fp) else 0
+    mb = b / 1e6
+    return jsonify({"mb": round(mb, 1), "max_mb": MAX_UPLOAD_MB, "ok": mb <= MAX_UPLOAD_MB, "src": "FSG26 Event Handbook DE 4.2.3"})
 
 # ---------- backup / restore / import ----------
 @app.get("/api/<tid>/backup")

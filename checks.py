@@ -59,7 +59,7 @@ def review(sheet, vals, imgs, notes, skipped=()):
         elif v is None and f.get("required"):
             if f["type"] == "select" and f.get("default"): add("warn", f'Confirm: {f["label"]} – the template shows "{f["default"]}"; pick the value that is true for our car ({f["cell"]})', f["cell"])
             else: add("warn", f'Missing: {f["label"]} ({f["cell"]})', f["cell"])
-        if v == "N/A" and not (notes or "").strip(): add("warn", f'"{f["label"]}" is N/A – add a short justification in the notes box.', f["cell"])
+        if v == "N/A" and not (notes or "").strip(): add("info", f'"{f["label"]}" is N/A – consider a short explanation for the reviewer (exported to Additional Info).', f["cell"])
     for i in sheet["images"]:
         if i["section"] in active and not imgs.get(i["id"]): add("warn", f'No picture uploaded: {i["label"][:90]}')
     for t in sheet.get("tables", []):
